@@ -1,0 +1,530 @@
+
+#include <stdio.h>
+#define uchar unsigned char
+#define uint unsigned int
+uchar dat,a,ds[10],i;
+long AD_DATA;
+#define K1 GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_0)
+
+/*************************** 宏定义***********************************************/
+/*Registers' Address*/
+#define REG_STATUS  0   
+#define REG_MUX     1	
+#define REG_ADCON   2	
+#define REG_DRATE   3
+#define REG_IO      4	
+#define REG_OFC0    5
+#define REG_OFC1    6
+#define REG_OPC2    7
+#define REG_FSC0    8
+#define REG_FSC1    9
+#define REG_FSC2    10
+
+/*Operation Command*/
+//#define CMD_WAKEUP     0x00
+#define CMD_RDATA      0x01
+#define CMD_RDATAC     0x03
+#define CMD_SDATAC     0x0F																												  
+#define CMD_RREG       0x10
+#define CMD_WREG       0x50
+#define CMD_SELFCAL    0xf0
+#define CMD_SELFOCAL   0xf1
+#define CMD_SELFGCAL   0xf2
+#define CMD_SYSOCAL    0xf3
+#define CMD_SYSGCAL    0xf4
+#define CMD_SYNC       0xfc
+#define CMD_STANDBY    0xfd
+#define CMD_RESET      0xfe
+#define CMD_WAKEUP     0xFF
+
+#define PGA_1            0x00
+#define PGA_2            0x01
+#define PGA_4            0x02
+#define PGA_8            0x03
+#define PGA_16           0x04
+#define PGA_32           0x05
+#define PGA_64           0x06
+
+#define POSITIVE_AIN0            (0X00<<4)
+#define POSITIVE_AIN1            (0X01<<4)
+#define POSITIVE_AIN2            (0X02<<4)
+#define POSITIVE_AIN3            (0X03<<4)
+#define POSITIVE_AIN4            (0X04<<4)
+#define POSITIVE_AIN5            (0X05<<4)
+#define POSITIVE_AIN6            (0X06<<4)
+#define POSITIVE_AIN7            (0X07<<4)
+#define POSITIVE_AINCOM          (0X08<<4)        
+
+#define NEGTIVE_AIN0              0X00
+#define NEGTIVE_AIN1              0X01
+#define NEGTIVE_AIN2              0X02
+#define NEGTIVE_AIN3              0X03
+#define NEGTIVE_AIN4              0X04
+#define NEGTIVE_AIN5              0X05
+#define NEGTIVE_AIN6              0X06
+#define NEGTIVE_AIN7              0X07
+#define NEGTIVE_AINCOM            0X08
+
+/*For fclkin=7.68MHz, data rate*/
+#define DATARATE_30K              0xf0
+#define DATARATE_15K              0xe0
+#define DATARATE_7_5K             0xd0
+#define DATARATE_3_7_5K           0xc0
+#define DATARATE_2K               0xb0
+
+/*STATUS REGISTER*/
+#define MSB_FRIST                (0x00<<3)
+#define LSB_FRIST                (0x01<<3)
+#define ACAL_OFF                 (0x00<<2)
+#define ACAL_ON                  (0x01<<2)
+#define BUFEN_OFF                (0x00<<1)
+#define BUFEN_ON                 (0x01<<1)
+
+/*ADCON REGISTER*/
+#define CLKOUT_OFF               (0x00<<5)
+#define CLKOUT_CLKIN             (0x01<<5)
+#define DETECT_OFF               (0x00<<3)
+#define DETECT_ON_2UA            (0x02<<3)
+
+#define ADS1256_DRDY    ((GPIOB->IDR)&(1<<12))   //	GPIOE->IDR读端口E的数据寄存器
+#define ADS1256_DO      ((GPIOB->IDR)&(1<<13)) 	
+
+#define SetADS1256_DRDY   GPIOB->BSRR =  (1<<12)   //BSRR对低16位中的某位置'1'则它对应的端口位被置'1'
+#define SetADS1256_DO     GPIOB->BSRR =  (1<<13)
+
+//#define ADS1256_SYNC   (1<<8)
+#define ADS1256_CS     (1<<11)
+#define ADS1256_IN     (1<<14)
+#define ADS1256_CLK    (1<<15)
+
+//#define SetADS1256_SYNC   GPIOB->BSRR =  ADS1256_SYNC
+#define SetADS1256_CS     GPIOB->BSRR =  ADS1256_CS
+#define SetADS1256_IN     GPIOB->BSRR =  ADS1256_IN
+#define SetADS1256_CLK    GPIOB->BSRR =  ADS1256_CLK
+
+#define ClrADS1256_SYNC   GPIOB->BRR =  ADS1256_SYNC   //BRR对低16位中的某位置'0'则端口x的对应位被清'0'
+#define ClrADS1256_CS     GPIOB->BRR =  ADS1256_CS
+#define ClrADS1256_IN     GPIOB->BRR =  ADS1256_IN
+#define ClrADS1256_CLK    GPIOB->BRR =  ADS1256_CLK
+
+
+unsigned char result[3];
+
+#define ADCLK RCC_APB2Periph_GPIOA  //定义AD芯片所使用的I/O端口的时钟。
+/*Registers' Address*/
+#define REG_STATUS  0
+#define REG_MUX     1
+#define REG_ADCON   2
+#define REG_DRATE   3
+#define REG_IO      4
+#define REG_OFC0    5
+#define REG_OFC1    6
+#define REG_OPC2    7
+#define REG_FSC0    8
+#define REG_FSC1    9
+#define REG_FSC2    10
+
+/*Operation Command*/
+//#define CMD_WAKEUP     0x00
+#define CMD_RDATA      0x01
+#define CMD_RDATAC     0x03
+#define CMD_SDATAC     0x0F
+#define CMD_RREG       0x10
+#define CMD_WREG       0x50
+#define CMD_SELFCAL    0xf0
+#define CMD_SELFOCAL   0xf1
+#define CMD_SELFGCAL   0xf2
+#define CMD_SYSOCAL    0xf3
+#define CMD_SYSGCAL    0xf4
+#define CMD_SYNC       0xfc
+#define CMD_STANDBY    0xfd
+#define CMD_RESET      0xfe
+#define CMD_WAKEUP     0xFF
+
+/*************************************************/
+void delayad(unsigned int tt)
+{
+	unsigned int i,j;
+	for(j=tt;j>0;j--)
+		for(i=5;i>0;i--);
+}
+
+/*************************************************/
+void delayad_nopar(void)
+{
+	unsigned long i =50;
+   	while(i--);
+}
+
+
+/*************************************************
+函数: void RCC_Configuration(void)
+功能: 复位和时钟控制 配置
+参数: 无
+返回: 无
+**************************************************/
+
+void RCC_Configuration(void)//配置时钟
+{
+  ErrorStatus HSEStartUpStatus;                    //定义外部高速晶体启动状态枚举变量
+  RCC_DeInit();                                    //复位RCC外部设备寄存器到默认值
+  RCC_HSEConfig(RCC_HSE_ON);                       //打开外部高速晶振
+  HSEStartUpStatus = RCC_WaitForHSEStartUp();      //等待外部高速时钟准备好
+  if(HSEStartUpStatus == SUCCESS)                  //外部高速时钟已经准别好
+  {
+    FLASH_PrefetchBufferCmd(FLASH_PrefetchBuffer_Enable); //开启FLASH预读缓冲功能，加速FLASH的读取。所有程序中必须的用法.位置：RCC初始化子函数里面，时钟起振之后
+    FLASH_SetLatency(FLASH_Latency_2);                    //flash操作的延时
+      	
+    RCC_HCLKConfig(RCC_SYSCLK_Div2);               //配置AHB(HCLK)时钟等于==SYSCLK
+    RCC_PCLK1Config(RCC_HCLK_Div2);  			   //配置APB1(PCLK1)钟==AHB1/2时钟
+	RCC_PCLK2Config(RCC_HCLK_Div2);                //配置APB2(PCLK2)钟==AHB时钟
+                                                   
+         
+    RCC_PLLConfig(RCC_PLLSource_HSE_Div1, RCC_PLLMul_9);  //配置PLL时钟 == 外部高速晶体时钟 * 9 = 72MHz
+    RCC_PLLCmd(ENABLE);                                   //使能PLL时钟
+   
+    while(RCC_GetFlagStatus(RCC_FLAG_PLLRDY) == RESET)    //等待PLL时钟就绪
+    {
+    }
+    RCC_SYSCLKConfig(RCC_SYSCLKSource_PLLCLK);            //配置系统时钟 = PLL时钟
+    while(RCC_GetSYSCLKSource() != 0x08)                  //检查PLL时钟是否作为系统时钟
+    {
+    }
+  }
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB |RCC_APB2Periph_AFIO, ENABLE);
+   //允许GPIOB、AFIO时钟
+}
+
+/*******************************************************************************
+ 函数: GPIO_Configuration(void)
+ 功能: 配置GPIO口
+ 参数: 无
+ 返回: 无
+*******************************************************************************/
+void GPIO_Configuration(void)
+{
+  GPIO_InitTypeDef GPIO_InitStructure;        //定义GPIO初始化结构体
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0|GPIO_Pin_11|GPIO_Pin_14|GPIO_Pin_15 ; 
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; 
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 
+  GPIO_Init(GPIOB, &GPIO_InitStructure);
+  GPIO_InitStructure.GPIO_Pin =GPIO_Pin_12|GPIO_Pin_13;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+  GPIO_Init(GPIOB, &GPIO_InitStructure); 
+}
+
+
+/*******************************************************************************
+函数：   NVIC_Configuration(void)
+功能：   配置中断功能
+输入：      无
+输出：      无        
+返回：      无       
+*******************************************************************************/
+
+void NVIC_Configuration(void)
+{
+   NVIC_InitTypeDef NVIC_InitStructure;
+   NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x0);
+  
+   /* Configure the NVIC Preemption Priority Bits */  
+   NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
+  
+   /* Enable the USART1 Interrupt */
+   NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;       //通道设置为串口1中断
+   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;	   //中断响应优先级0
+   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;		   //打开中断
+   NVIC_Init(&NVIC_InitStructure); 						   //初始化
+}
+
+/*******************************************************************************
+函数名：USART1_Configuration
+输 入:
+输 出:
+功能说明：配置串口参数
+******************************************************************************/
+void USART1_Configuration(void)
+{
+	GPIO_InitTypeDef GPIO_InitStructure;
+	USART_InitTypeDef USART_InitStructure;
+
+	/* 打开GPIO和USART部件的时钟 */
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_AFIO, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);
+
+	/* 将USART Tx的GPIO配置为推挽复用模式 */
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+	/* 将USART Rx的GPIO配置为浮空输入模式
+		由于CPU复位后，GPIO缺省都是浮空输入模式，因此下面这个步骤不是必须的
+		但是，我还是建议加上便于阅读，并且防止其它地方修改了这个口线的设置参数
+	*/
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+
+	/*   配置USART1参数
+	    - BaudRate = 9600 baud
+	    - Word Length = 8 Bits
+	    - One Stop Bit
+	    - No parity
+	    - Hardware flow control disabled (RTS and CTS signals)
+	    - Receive and transmit enabled
+	*/
+	USART_InitStructure.USART_BaudRate =115200;
+	USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+	USART_InitStructure.USART_StopBits = USART_StopBits_1;
+	USART_InitStructure.USART_Parity = USART_Parity_No;
+	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+	USART_Init(USART1, &USART_InitStructure);
+
+    /* 若接收数据寄存器满，则产生中断 */
+    USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
+
+	/* 使能 USART1， 配置完毕 */
+	USART_Cmd(USART1, ENABLE);
+
+    /* 如下语句解决第1个字节无法正确发送出去的问题 */
+    USART_ClearFlag(USART1, USART_FLAG_TC);     // 清标志
+}
+
+/*******************************************************************************
+函数名：Uart1_PutChar（）
+输  入:
+输  出:
+功能说明：串口发送一字节数据
+********************************************************************************/
+
+void Uart1_PutChar(u8 ch)
+{
+  USART_SendData(USART1, (u8) ch);
+  while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
+}
+
+/*******************************************************************************
+ 函数: USART1_IRQHandler(void)
+ 功能: 串口中断函数
+参数: 无
+返回: 无 
+*******************************************************************************/
+void USART1_IRQHandler(void)            //在中断服务程序中，由于主机响应中断时并不知道是哪个中断源发出中断请求
+{
+ 									   //  是不用做上述判别的。但是无论什么情况，做上述判别是个好习惯
+  if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET)    //若接收数据寄存器满
+  {     
+    dat = USART_ReceiveData(USART1);  			   
+  }
+} 
+
+/*******************************************************************************
+函数: ADS1256_Write_Byte(unsigned char d)
+功能: 写入一字节数据
+参数: 无
+返回: 无
+*******************************************************************************/
+ void ADS1256_Write_Byte(unsigned char d)
+{
+	unsigned char i=8;	
+	ClrADS1256_CLK ;
+   	while(i--)
+  	{
+		if(d & 0X80)
+	  		SetADS1256_IN  ;
+		else  
+			ClrADS1256_IN  ;
+      	delayad_nopar(); 	  	  
+		SetADS1256_CLK;
+	  	delayad_nopar();
+	  	ClrADS1256_CLK ;
+	  	delayad_nopar();
+	  	d <<= 1;
+	}
+}
+
+/*******************************************************************************
+函数: ADS1256_Read_Byte(void)
+功能: 读取一字节数据
+参数: 无
+返回: 无 
+*******************************************************************************/
+
+unsigned char ADS1256_Read_Byte(void)
+{  
+	unsigned char i=8,d;   
+	ClrADS1256_CLK;	 
+   	while(i--)
+    {
+      	d <<=1;	
+	  	SetADS1256_CLK;  
+      	delayad_nopar(); 
+      	ClrADS1256_CLK;   
+		delayad_nopar();
+		SetADS1256_DO;
+	  	if(ADS1256_DO)
+ 	    	d |= 0x01;
+	  	else 
+ 	    	d &= 0xfe;     	   	  	  
+	}    
+   	return d;
+
+}
+
+
+/******************************************************************************
+ 函数: ADS1256_Write_Reg(unsigned char reg_name, unsigned char reg_data)
+ 功能: 写寄存器函数
+ 参数: 无
+ 返回: 无
+ 
+*******************************************************************************/
+
+void  ADS1256_Write_Reg(unsigned char reg_name, unsigned char reg_data)
+{
+  	while(ADS1256_DRDY);
+	ADS1256_Write_Byte(CMD_WREG|reg_name);
+   	ADS1256_Write_Byte(0x00);
+   	ADS1256_Write_Byte(reg_data);
+}
+
+
+/*******************************************************************************
+ 函数: ADS1256_Read_dat(void)
+ 功能: 读取ADS1256三字节数据
+ 参数: 无
+ 返回: 无
+*******************************************************************************/
+void  ADS1256_Read_dat(void)
+{
+	ClrADS1256_CS;
+	while(ADS1256_DRDY==0);
+	while(ADS1256_DRDY);	 //DRDY信号为低表示AD转换完成
+   	ADS1256_Write_Byte(CMD_RDATA);
+	delayad(50);   //min=50*(1/fCLKIN)=50*(1/7.68MHZ)=6500ns;max=whatever
+   	result[0] = ADS1256_Read_Byte();
+   	result[1] = ADS1256_Read_Byte();
+   	result[2] = ADS1256_Read_Byte();
+	SetADS1256_CS;
+}
+
+/*******************************************************************************
+函数: ADS1256_int()
+功能: 初始化ADS1256
+参数: 无
+返回: 无 
+*******************************************************************************/
+void ADS1256_int()
+{
+	ClrADS1256_CLK;
+	delayad(2);
+	ClrADS1256_CS; 
+	while(!ADS1256_DRDY);
+	while(ADS1256_DRDY); 		
+	ADS1256_Write_Byte(CMD_RESET);
+	while(ADS1256_DRDY);
+	ADS1256_Write_Reg(REG_STATUS,0xf4);//STATUS REGISTER:Auto-Calibration Enabled,Analog Input Buffer Disabled
+	
+	while(ADS1256_DRDY);
+	ADS1256_Write_Reg(REG_MUX,POSITIVE_AIN0+ NEGTIVE_AINCOM);  //MUX:AIN0
+	//while(ADS1256_DRDY);
+    //ADS1256_Write_Reg(REG_MUX,0x08);//AIN0 is Positive,single-ended measurements
+	while(ADS1256_DRDY);
+	ADS1256_Write_Reg(REG_ADCON,CLKOUT_OFF+DETECT_OFF+PGA_1);	   //ADCON=00h
+	ADS1256_Write_Reg(REG_DRATE,DATARATE_15K);//data rate 15k SPS
+	while(ADS1256_DRDY);
+	ADS1256_Write_Byte(CMD_WAKEUP);
+	delayad(10);
+	SetADS1256_CS;
+}
+
+/********************************************************************************/
+ void Send_data_ascii(uchar y)
+{
+      ds[1]=AD_DATA/100000;
+	  ds[2]=AD_DATA%100000/10000;
+	  ds[3]=AD_DATA%10000/1000;
+	  ds[4]=AD_DATA%1000/100;
+	  ds[5]=AD_DATA%100/10;
+	  ds[6]=AD_DATA%100%10;
+
+	  Uart1_PutChar('V'); 
+	  Uart1_PutChar(y+0x30);	 
+	  Uart1_PutChar(ds[0]);
+	  Uart1_PutChar(ds[1]+0X30);
+	  Uart1_PutChar('.');
+	  Uart1_PutChar(ds[2]+0X30);	 
+	  Uart1_PutChar(ds[3]+0X30);
+	  Uart1_PutChar(ds[4]+0X30);
+	  Uart1_PutChar(ds[5]+0X30);
+	  Uart1_PutChar(ds[6]+0X30);
+	  
+	  Uart1_PutChar(0x0d); 
+	  Uart1_PutChar(0x0a);	 
+
+}
+
+/*******************************************************************************
+ 函数:Write_Reg_Mux()
+ 功能: 读取数据并通过UART1 发送数据
+ 参数: 无
+ 返回: 无 
+*******************************************************************************/
+
+void  Write_Reg_Mux(uchar x)//写寄存器指令读取数值
+{	 
+      dat=0;
+	  // ClrADS1256_CS;
+	  ADS1256_Write_Reg(REG_MUX,x);//选择通道
+	 	
+	  ADS1256_Read_dat();
+
+	  if((result[0]&0x80)==0x80)//判断采集电压的正负,若为负电压,则转换二进制补码数据计算电压值
+	  {
+	  	result[0]=~result[0];//首字节二进制补码取反
+	  	result[1]=~result[1];//中间字节二进制补码取反
+	  	result[2]=~result[2];//尾字节二进制补码取反
+		ds[0]='-';//负符号位	  
+	  }
+	  else
+	  ds[0]='+';//正符号位
+
+	  AD_DATA=((result[0]*66536+result[1]*256+result[2])*5)/83.88607;//计算电压值
+
+}
+
+/*********************************************************************************
+函数: int main(void)
+功能: main主函数
+参数: 无
+返回: 无
+*********************************************************************************/
+
+int app_main(void)
+{
+
+ 
+  while(1) 
+  {     	
+	 a=POSITIVE_AIN0+ NEGTIVE_AIN1;
+	 Write_Reg_Mux(a);
+	 Send_data_ascii(0);
+
+	 a=POSITIVE_AIN2+ NEGTIVE_AIN3;
+	 Write_Reg_Mux(a);
+	 Send_data_ascii(1);
+
+	 a=POSITIVE_AIN4+ NEGTIVE_AIN5;
+	 Write_Reg_Mux(a);
+	 Send_data_ascii(2);
+
+	 a=POSITIVE_AIN6+ NEGTIVE_AIN7;
+	 Write_Reg_Mux(a);
+	 Send_data_ascii(3);
+     delayad(50000);
+	 
+	 }
+}
