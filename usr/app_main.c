@@ -4,15 +4,27 @@
 #include "string.h"
 #include "stdio.h"
 #include "tim.h"
+#include "adc.h"
+#include "usart.h"   // 包含 USART 句柄定义（如 huart1）
 
 #include "../usr/KEY/key.h"
 #include "../usr/app_main.h"
 
 
 void key_event_handler(uint8_t key_id, key_event_t event);
-
+#define ADC_MAX_NUM 2*36 //3组ADC,每组最多存储5个值
+uint16_t ADC_Values[ADC_MAX_NUM]={0};
+uint16_t adc_value_flg=0;
+uint16_t ADC_Switch=0;
 static uint8_t key_0;
 static uint8_t key_1;
+static uint8_t key1_click;
+uint16_t pulse_width[30];
+static uint8_t pul_index=0;
+
+uint32_t adc_index[6];
+
+enum {IDE,MEASURE,PRINT,STOP,ADC_TEST};
 /**
  * @brief ???
  */
@@ -22,14 +34,80 @@ void app_main(void)
     /* ???ADS1256 */
     // ADS1256_Init();
     key_init();
+    HAL_UART_Transmit(&huart1,"hello\r\n",7,100);
     key_0 = key_register(KEY_0_GPIO_Port, KEY_0_Pin, true); // PA0??????
     key_1 = key_register(KEY_1_GPIO_Port, KEY_1_Pin, true); // PA0??????
     key_set_callback(key_event_handler);
     HAL_TIM_Base_Start_IT(&htim11);
-    HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+    HAL_TIM_Base_Start(&htim3);
+
+//    HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+//    HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_1);
+//    HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2);
+//    HAL_ADC_Start_IT(&hadc1);
+
+    uint8_t state=IDE;
     /* ??? */
     while(1)
     {
+        uint8_t data_high;
+        uint8_t data_low;
+        uint8_t data_print[20];
+        switch (state) {
+            case IDE:
+                if (key1_click==1)
+                {
+                    key1_click=0;
+                    state=MEASURE;
+                }
+
+                break;
+            case MEASURE:
+                HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_1);
+                HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2);
+                if (ADC_Switch)
+                {
+                    HAL_ADC_Start_IT(&hadc1);
+                }
+                else
+                {
+                    HAL_ADC_Stop_IT(&hadc1);
+                }
+                if(pul_index%30==0)
+                    state=PRINT;
+                break;
+//                HAL_Delay(1000);
+            case PRINT:
+
+                for(uint8_t i=0;i<30;i++)
+                {
+
+                    data_high = pulse_width[i]>>8;
+                    data_low = pulse_width[i]&0x00ff;
+                    sprintf(data_print,"%d:%d\r\n",i,pulse_width[i]);
+                    HAL_UART_Transmit(&huart1,data_print,sizeof(data_print),100);
+//                    HAL_UART_Transmit(&huart1,data_low,1,100);
+
+                }
+                state = STOP;
+                break;
+            case STOP:
+                HAL_TIM_IC_Stop_IT(&htim2,TIM_CHANNEL_1);
+                HAL_TIM_IC_Stop_IT(&htim2,TIM_CHANNEL_2);
+                state = ADC_TEST;
+                break;
+            case ADC_TEST:
+                for (uint8_t i=0 ;i<6;i++){
+                    printf("%d,%d\r\n",i,adc_index[i]);
+                }
+                state = IDE;
+
+                break;
+            default:
+                break;
+
+        }
+
         // // ????0: AIN0 - AIN1
         // a = POSITIVE_AIN0 + NEGTIVE_AIN1;
         // Write_Reg_Mux(a);
@@ -50,7 +128,7 @@ void app_main(void)
         // Write_Reg_Mux(a);
         // Send_Data_ASCII(3);
         
-        HAL_Delay(500);  // ??500ms
+//        HAL_Delay(1000);  // ??500ms
     }
 }
 
@@ -84,7 +162,7 @@ void key_event_handler(uint8_t key_id, key_event_t event)
         switch (event)
         {
         case KEY_EVENT_CLICK:
-            // DOWN??????LED2??
+            key1_click=1;
             HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
             break;
         case KEY_EVENT_LONG_PRESS:
@@ -114,8 +192,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     {
 
         key_systick_handler();
-        // ms++;/*????*/
-        if (ms % 1000 == 0) /*??1s???????*/
+         ms++;/*????*/
+        if (ms % 500 == 0) /*??1s???????*/
         {
             HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13); /*??LED*/
             /*???????????1s*/
@@ -149,4 +227,70 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
             // ??????????????
         }
     }
+}
+uint32_t adc_index_value=0;
+void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
+{
+
+    static uint16_t t = 0;
+    static uint16_t d = 0;
+    static uint8_t adc_index_index=0;
+    if(htim->Instance == TIM2)
+    {
+
+        if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)
+        {
+//            LEDDT[0]=1;
+            t = HAL_TIM_ReadCapturedValue(htim,TIM_CHANNEL_1)+1;
+//            HAL_UART_Transmit(&huart1,(uint8_t *)&d,2,100);
+            pulse_width[pul_index%30]=t-d;
+            pul_index++;
+//            freq = 1000000 / t;
+//            duty = (float)d/t*100;
+//            HAL_ADC_Stop_IT(&hadc1);
+            ADC_Switch=0;
+
+            adc_index[adc_index_index++]=adc_index_value;
+            adc_index_value=0;
+        }
+
+        else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2)
+        {
+//            LEDDT[1]=2;
+            d =  HAL_TIM_ReadCapturedValue(htim,TIM_CHANNEL_2)+1;
+//            HAL_ADC_Start_IT(&hadc1);
+//            HAL_TIM_Base_Start_IT(&htim11);
+            ADC_Switch=1;
+
+//            HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_8);
+//            HAL_UART_Transmit(&huart1,(uint8_t *)&d,2,100);
+        }
+
+
+    }
+}
+
+//ADC转换完成自动调用函数
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
+
+    //获取值并存储
+    ADC_Values[adc_value_flg++]=HAL_ADC_GetValue(hadc);
+    adc_index_value++;
+    if(adc_value_flg==ADC_MAX_NUM)
+    {
+        adc_value_flg=0;//清零下标
+    }
+
+
+}
+
+
+// 重定向 printf 到串口
+int _write(int file, char *ptr, int len)
+{
+    for (int i = 0; i < len; i++)
+    {
+        HAL_UART_Transmit(&huart1, (uint8_t *)&ptr[i], 1, HAL_MAX_DELAY);
+    }
+    return len;
 }

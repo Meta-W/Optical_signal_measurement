@@ -1,0 +1,20 @@
+CMakeFiles/ads1256.elf.dir/Core/Src/sysmem.c.obj: \
+ E:\ads1256_stm32\Optical_signal_measurement\Core\Src\sysmem.c \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\errno.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\sys\errno.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\sys\reent.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\_ansi.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\newlib.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\_newlib_version.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\sys\config.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\machine\ieeefp.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\sys\features.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\lib\gcc\arm-none-eabi\12.3.1\include\stddef.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\sys\_types.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\machine\_types.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\machine\_default_types.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\sys\lock.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\lib\gcc\arm-none-eabi\12.3.1\include\stdint.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\stdint.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\sys\_intsup.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\sys\_stdint.h
