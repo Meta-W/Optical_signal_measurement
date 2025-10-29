@@ -56,8 +56,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj.d"
   "CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj"
   "CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj.d"
-  "CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.obj"
-  "CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.obj.d"
   "CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj"
   "CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj.d"
   "CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj"

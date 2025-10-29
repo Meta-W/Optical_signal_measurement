@@ -1119,48 +1119,6 @@ CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj: /home/wt/Documents/STM32_Proj/ads1
   /usr/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h \
   /usr/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h
 
-CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads1256.c \
-  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/main.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/spi.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/stm32f4xx_hal_conf.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/cmsis_compiler.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/cmsis_gcc.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/cmsis_version.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/core_cm4.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/mpu_armv7.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
-  /home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads1256.h \
-  /usr/arm-none-eabi/include/_newlib_version.h \
-  /usr/arm-none-eabi/include/machine/_default_types.h \
-  /usr/arm-none-eabi/include/stdint.h \
-  /usr/arm-none-eabi/include/sys/_intsup.h \
-  /usr/arm-none-eabi/include/sys/_stdint.h \
-  /usr/arm-none-eabi/include/sys/features.h \
-  /usr/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h \
-  /usr/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h
-
 CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads125x.c \
   /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/main.h \
   /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/stm32f4xx_hal_conf.h \
@@ -1251,7 +1209,6 @@ CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj: /home/wt/Documents/STM32_Proj/ads
   /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
   /home/wt/Documents/STM32_Proj/ads1256/usr/KEY/key.h \
   /home/wt/Documents/STM32_Proj/ads1256/usr/app_main.h \
-  /home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads1256.h \
   /home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads125x.h \
   /usr/arm-none-eabi/include/_ansi.h \
   /usr/arm-none-eabi/include/_newlib_version.h \
@@ -1283,8 +1240,6 @@ CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj: /home/wt/Documents/STM32_Proj/ads
 /home/wt/Documents/STM32_Proj/ads1256/usr/app_main.c:
 
 /home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads125x.c:
-
-/home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads1256.c:
 
 /usr/lib/gcc/arm-none-eabi/14.2.1/include/stdbool.h:
 
@@ -1465,8 +1420,6 @@ CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj: /home/wt/Documents/STM32_Proj/ads
 /usr/arm-none-eabi/include/_newlib_version.h:
 
 /usr/arm-none-eabi/include/strings.h:
-
-/home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads1256.h:
 
 /home/wt/Documents/STM32_Proj/ads1256/Core/Src/tim.c:
 

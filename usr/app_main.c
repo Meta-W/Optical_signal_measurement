@@ -5,7 +5,6 @@
 #include "stdio.h"
 #include "tim.h"
 #include "usart.h"   // 包含 USART 句柄定义（如 huart1）
-#include "ads1256/ads1256.h"
 #include "ads1256/ads125x.h"
 #include "../usr/KEY/key.h"
 #include "../usr/app_main.h"
@@ -103,12 +102,6 @@ void app_main(void)
     HAL_Delay(1000);
     // ADS1256_Init();
     ads_test();
-    while(1)
-    {
-
-        printf("%lf\r\n",ADS1256ReadData(1));
-        HAL_Delay(500);
-    }
     uint8_t state=IDE;
     /* ??? */
     while(1)

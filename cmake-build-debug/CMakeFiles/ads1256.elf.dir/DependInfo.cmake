@@ -58,7 +58,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj.d"
   "/home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj.d"
   "/home/wt/Documents/STM32_Proj/ads1256/usr/KEY/key.c" "CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj.d"
-  "/home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads1256.c" "CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.obj.d"
   "/home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads125x.c" "CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj.d"
   "/home/wt/Documents/STM32_Proj/ads1256/usr/app_main.c" "CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj.d"
   )

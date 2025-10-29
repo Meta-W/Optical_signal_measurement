@@ -56,7 +56,6 @@ CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj: \
  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/usart.h \
- /home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads1256.h \
  /home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads125x.h \
  /home/wt/Documents/STM32_Proj/ads1256/usr/../usr/KEY/key.h \
  /usr/lib/gcc/arm-none-eabi/14.2.1/include/stdbool.h \

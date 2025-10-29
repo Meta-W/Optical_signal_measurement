@@ -491,24 +491,10 @@ CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wt/Documents/STM32_Proj/ads1256/usr/KEY/key.c -o CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.s
 
-CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
-CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads1256.c
-CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.obj -MF CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.obj.d -o CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads1256.c
-
-CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads1256.c > CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.i
-
-CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads1256.c -o CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.s
-
 CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads125x.c
 CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj -MF CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj.d -o CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads125x.c
 
 CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.i: cmake_force
@@ -551,7 +537,6 @@ ads1256_elf_OBJECTS = \
 "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj" \
 "CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj" \
 "CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj" \
-"CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.obj" \
 "CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj"
 
 # External object files for target ads1256.elf
@@ -587,11 +572,10 @@ ads1256.elf: CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4
 ads1256.elf: CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
 ads1256.elf: CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj
 ads1256.elf: CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj
-ads1256.elf: CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.obj
 ads1256.elf: CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj
 ads1256.elf: CMakeFiles/ads1256.elf.dir/build.make
 ads1256.elf: CMakeFiles/ads1256.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Linking C executable ads1256.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Linking C executable ads1256.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ads1256.elf.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building /home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/ads1256.hex"
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building /home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/ads1256.bin"

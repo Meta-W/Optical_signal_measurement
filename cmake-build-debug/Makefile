@@ -816,30 +816,6 @@ usr/KEY/key.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.s
 .PHONY : usr/KEY/key.c.s
 
-usr/ads1256/ads1256.obj: usr/ads1256/ads1256.c.obj
-.PHONY : usr/ads1256/ads1256.obj
-
-# target to build an object file
-usr/ads1256/ads1256.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.obj
-.PHONY : usr/ads1256/ads1256.c.obj
-
-usr/ads1256/ads1256.i: usr/ads1256/ads1256.c.i
-.PHONY : usr/ads1256/ads1256.i
-
-# target to preprocess a source file
-usr/ads1256/ads1256.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.i
-.PHONY : usr/ads1256/ads1256.c.i
-
-usr/ads1256/ads1256.s: usr/ads1256/ads1256.c.s
-.PHONY : usr/ads1256/ads1256.s
-
-# target to generate assembly for a file
-usr/ads1256/ads1256.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.s
-.PHONY : usr/ads1256/ads1256.c.s
-
 usr/ads1256/ads125x.obj: usr/ads1256/ads125x.c.obj
 .PHONY : usr/ads1256/ads125x.obj
 
@@ -983,9 +959,6 @@ help:
 	@echo "... usr/KEY/key.obj"
 	@echo "... usr/KEY/key.i"
 	@echo "... usr/KEY/key.s"
-	@echo "... usr/ads1256/ads1256.obj"
-	@echo "... usr/ads1256/ads1256.i"
-	@echo "... usr/ads1256/ads1256.s"
 	@echo "... usr/ads1256/ads125x.obj"
 	@echo "... usr/ads1256/ads125x.i"
 	@echo "... usr/ads1256/ads125x.s"
