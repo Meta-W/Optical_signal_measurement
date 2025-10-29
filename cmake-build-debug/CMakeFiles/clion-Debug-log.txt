@@ -23,6 +23,6 @@ CMake Deprecation Warning:
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Minimal optimization, debug info included
--- Configuring done (1.6s)
+-- Configuring done (2.8s)
 -- Generating done (0.0s)
 -- Build files have been written to: E:/ads1256_stm32/Optical_signal_measurement/cmake-build-debug

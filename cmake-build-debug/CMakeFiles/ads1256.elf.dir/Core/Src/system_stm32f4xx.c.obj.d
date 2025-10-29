@@ -28,9 +28,6 @@ CMakeFiles/ads1256.elf.dir/Core/Src/system_stm32f4xx.c.obj: \
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_dma.h \
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_dma_ex.h \
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_cortex.h \
- E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_adc.h \
- E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_ll_adc.h \
- E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_adc_ex.h \
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash.h \
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash_ex.h \
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash_ramfunc.h \

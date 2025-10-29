@@ -4,9 +4,8 @@
 #include "string.h"
 #include "stdio.h"
 #include "tim.h"
-#include "adc.h"
 #include "usart.h"   // 包含 USART 句柄定义（如 huart1）
-
+#include "ads1256/ads1256.h"
 #include "../usr/KEY/key.h"
 #include "../usr/app_main.h"
 
@@ -25,6 +24,48 @@ static uint8_t pul_index=0;
 uint32_t adc_index[6];
 
 enum {IDE,MEASURE,PRINT,STOP,ADC_TEST};
+
+void ADC_Continuous(void)
+{
+    ADC_ConfigTypeDef ADCConfig;//ADC配置结构体
+
+    ADCConfig.AIN_P=AdcAin_AIN0;//输入ADC测量P通道
+    ADCConfig.AIN_N=AdcAin_AINCOM;//输入ADC测量N通道
+    ADCConfig.AinBuf=AdcInBuf_ON;//打开输入缓冲
+    ADCConfig.ClockOut=AdcClockOut_OFF;//7.68M时钟输出关闭
+    ADCConfig.PGA=AdcPga_GAN1;//内置放大器放大倍数
+    ADCConfig.SenserTestCurrent=AdcTestCurrent_OFF;//关闭测试电流
+    ADCConfig.SPS=AdcSpeed_100SPS;//ADC采样率10sps
+    ADCConfig.ADC_RefVol=2.5;//ADC参考源电压
+    if(ADS1256_config(ADCConfig)!=0)//ADC寄存器配置
+    {
+        printf("ADS1256 init fail,RESET!!error code:%d\r\n",ADS1256_config(ADCConfig));
+        HAL_Delay(1000);
+//        NVIC_SystemReset();
+    }
+    ADS1256_WAKEUP();//唤醒单片机
+    while(ADS1256_DRDY()!=0){};//等待ADC准备好
+    ADS1256_AdjSELF();//对ADC进行一次内部校准
+    while(ADS1256_DRDY()!=0){};//等待ADC准备好
+    ADS1256_SYNC();   //AD转换同步
+    ADS1256_WAKEUP(); //启动同步
+    while(ADS1256_DRDY()!=0){};//等待ADC准备好	
+
+    ADS1256_RDATAC();//发送连续读取ADC指令
+    HAL_Delay(15);//等待最少50个ADC时钟周期
+    while(1)//循环采样
+    {
+        if(ADS1256_DRDY()==0)
+        {
+            int32_t Vol=ADS1256_ContinuousRead_AdcData(); //读一次24位转化数据
+            double VolF=ADS1256_DataFormatting(Vol,ADCConfig.ADC_RefVol,0x01<<ADCConfig.PGA);//把ADC转换为电压值
+            if(Vol & 0x00800000) Vol = -((~Vol) & 0x00FFFFFF);//处理负数
+            printf("ADC=%8d    vol=%.6lfV\r\n",Vol,VolF);//串口发送电压
+        }
+//        HAL_Delay(500);
+    }
+}
+
 /**
  * @brief ???
  */
@@ -34,6 +75,7 @@ void app_main(void)
     /* ???ADS1256 */
     // ADS1256_Init();
     key_init();
+    HAL_GPIO_WritePin(ADS1256_CS_GPIO_Port,ADS1256_CS_Pin,0);
     HAL_UART_Transmit(&huart1,"hello\r\n",7,100);
     key_0 = key_register(KEY_0_GPIO_Port, KEY_0_Pin, true); // PA0??????
     key_1 = key_register(KEY_1_GPIO_Port, KEY_1_Pin, true); // PA0??????
@@ -45,16 +87,19 @@ void app_main(void)
 //    HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_1);
 //    HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2);
 //    HAL_ADC_Start_IT(&hadc1);
-
+    HAL_Delay(1000);
+    ADC_Continuous();
     uint8_t state=IDE;
     /* ??? */
     while(1)
     {
+
         uint8_t data_high;
         uint8_t data_low;
         uint8_t data_print[20];
         switch (state) {
             case IDE:
+
                 if (key1_click==1)
                 {
                     key1_click=0;
@@ -65,14 +110,6 @@ void app_main(void)
             case MEASURE:
                 HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_1);
                 HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2);
-                if (ADC_Switch)
-                {
-                    HAL_ADC_Start_IT(&hadc1);
-                }
-                else
-                {
-                    HAL_ADC_Stop_IT(&hadc1);
-                }
                 if(pul_index%30==0)
                     state=PRINT;
                 break;
@@ -271,18 +308,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 }
 
 //ADC转换完成自动调用函数
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
 
-    //获取值并存储
-    ADC_Values[adc_value_flg++]=HAL_ADC_GetValue(hadc);
-    adc_index_value++;
-    if(adc_value_flg==ADC_MAX_NUM)
-    {
-        adc_value_flg=0;//清零下标
-    }
-
-
-}
 
 
 // 重定向 printf 到串口

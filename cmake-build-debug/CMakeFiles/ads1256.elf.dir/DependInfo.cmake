@@ -30,7 +30,6 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "E:/ads1256_stm32/Optical_signal_measurement/Core/Src/adc.c" "CMakeFiles/ads1256.elf.dir/Core/Src/adc.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Core/Src/adc.c.obj.d"
   "E:/ads1256_stm32/Optical_signal_measurement/Core/Src/gpio.c" "CMakeFiles/ads1256.elf.dir/Core/Src/gpio.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Core/Src/gpio.c.obj.d"
   "E:/ads1256_stm32/Optical_signal_measurement/Core/Src/main.c" "CMakeFiles/ads1256.elf.dir/Core/Src/main.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Core/Src/main.c.obj.d"
   "E:/ads1256_stm32/Optical_signal_measurement/Core/Src/spi.c" "CMakeFiles/ads1256.elf.dir/Core/Src/spi.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Core/Src/spi.c.obj.d"
@@ -42,8 +41,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "E:/ads1256_stm32/Optical_signal_measurement/Core/Src/tim.c" "CMakeFiles/ads1256.elf.dir/Core/Src/tim.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Core/Src/tim.c.obj.d"
   "E:/ads1256_stm32/Optical_signal_measurement/Core/Src/usart.c" "CMakeFiles/ads1256.elf.dir/Core/Src/usart.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Core/Src/usart.c.obj.d"
   "E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj.d"
-  "E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj.d"
-  "E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj.d"
   "E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj.d"
   "E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj.d"
   "E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj.d"
@@ -60,8 +57,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj.d"
   "E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj.d"
   "E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj.d"
-  "E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c.obj.d"
   "E:/ads1256_stm32/Optical_signal_measurement/usr/KEY/key.c" "CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj.d"
+  "E:/ads1256_stm32/Optical_signal_measurement/usr/ads1256/ads1256.c" "CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.obj.d"
   "E:/ads1256_stm32/Optical_signal_measurement/usr/app_main.c" "CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj.d"
   )
 

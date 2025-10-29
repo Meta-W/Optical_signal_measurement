@@ -98,9 +98,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/Core/Inc/adc.h">
-			<Option target="ads1256.elf"/>
-		</Unit>
 		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/Core/Inc/gpio.h">
 			<Option target="ads1256.elf"/>
 		</Unit>
@@ -120,9 +117,6 @@
 			<Option target="ads1256.elf"/>
 		</Unit>
 		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/Core/Inc/usart.h">
-			<Option target="ads1256.elf"/>
-		</Unit>
-		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/Core/Src/adc.c">
 			<Option target="ads1256.elf"/>
 		</Unit>
 		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/Core/Src/gpio.c">
@@ -269,12 +263,6 @@
 		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h">
 			<Option target="ads1256.elf"/>
 		</Unit>
-		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h">
-			<Option target="ads1256.elf"/>
-		</Unit>
-		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h">
-			<Option target="ads1256.elf"/>
-		</Unit>
 		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h">
 			<Option target="ads1256.elf"/>
 		</Unit>
@@ -329,9 +317,6 @@
 		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h">
 			<Option target="ads1256.elf"/>
 		</Unit>
-		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h">
-			<Option target="ads1256.elf"/>
-		</Unit>
 		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_bus.h">
 			<Option target="ads1256.elf"/>
 		</Unit>
@@ -372,12 +357,6 @@
 			<Option target="ads1256.elf"/>
 		</Unit>
 		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c">
-			<Option target="ads1256.elf"/>
-		</Unit>
-		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c">
-			<Option target="ads1256.elf"/>
-		</Unit>
-		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c">
 			<Option target="ads1256.elf"/>
 		</Unit>
 		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c">
@@ -428,9 +407,6 @@
 		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c">
 			<Option target="ads1256.elf"/>
 		</Unit>
-		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c">
-			<Option target="ads1256.elf"/>
-		</Unit>
 		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/STM32F401CCUX_FLASH.ld">
 			<Option target="ads1256.elf"/>
 		</Unit>
@@ -438,6 +414,12 @@
 			<Option target="ads1256.elf"/>
 		</Unit>
 		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/usr/KEY/key.h">
+			<Option target="ads1256.elf"/>
+		</Unit>
+		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/usr/ads1256/ads1256.c">
+			<Option target="ads1256.elf"/>
+		</Unit>
+		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/usr/ads1256/ads1256.h">
 			<Option target="ads1256.elf"/>
 		</Unit>
 		<Unit filename="E:/ads1256_stm32/Optical_signal_measurement/usr/app_main.c">

@@ -1,9 +1,6 @@
-CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj: \
- E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc_ex.c \
- E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal.h \
- E:\ads1256_stm32\Optical_signal_measurement\Core\Inc/stm32f4xx_hal_conf.h \
- E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_rcc.h \
- E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_def.h \
+CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.obj: \
+ E:\ads1256_stm32\Optical_signal_measurement\usr\ads1256\ads1256.c \
+ E:\ads1256_stm32\Optical_signal_measurement\usr\ads1256\ads1256.h \
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\CMSIS\Device\ST\STM32F4xx\Include/stm32f4xx.h \
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\CMSIS\Device\ST\STM32F4xx\Include/stm32f401xc.h \
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\CMSIS\Include/core_cm4.h \
@@ -19,6 +16,10 @@ CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\CMSIS\Include/cmsis_gcc.h \
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\CMSIS\Include/mpu_armv7.h \
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\CMSIS\Device\ST\STM32F4xx\Include/system_stm32f4xx.h \
+ E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal.h \
+ E:\ads1256_stm32\Optical_signal_measurement\Core\Inc/stm32f4xx_hal_conf.h \
+ E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_rcc.h \
+ E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_def.h \
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/Legacy/stm32_hal_legacy.h \
  c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\lib\gcc\arm-none-eabi\12.3.1\include\stddef.h \
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_rcc_ex.h \
@@ -28,9 +29,6 @@ CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_dma.h \
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_dma_ex.h \
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_cortex.h \
- E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_adc.h \
- E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_ll_adc.h \
- E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_adc_ex.h \
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash.h \
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash_ex.h \
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash_ramfunc.h \
@@ -39,4 +37,19 @@ CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_spi.h \
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_tim.h \
  E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_tim_ex.h \
- E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_uart.h
+ E:\ads1256_stm32\Optical_signal_measurement\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_uart.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\stdio.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\_ansi.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\newlib.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\sys\config.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\machine\ieeefp.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\sys\cdefs.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\lib\gcc\arm-none-eabi\12.3.1\include\stdarg.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\sys\reent.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\_ansi.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\sys\_types.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\machine\_types.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\sys\lock.h \
+ c:\users\28375\scoop\apps\gcc-arm-none-eabi\current\arm-none-eabi\include\sys\stdio.h \
+ E:\ads1256_stm32\Optical_signal_measurement\Core\Inc/spi.h \
+ E:\ads1256_stm32\Optical_signal_measurement\Core\Inc/main.h
