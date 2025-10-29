@@ -58,10 +58,11 @@ file(REMOVE_RECURSE
   "CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj.d"
   "CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.obj"
   "CMakeFiles/ads1256.elf.dir/usr/ads1256/ads1256.c.obj.d"
+  "CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj"
+  "CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj.d"
   "CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj"
   "CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj.d"
   "ads1256.elf"
-  "ads1256.elf.manifest"
   "ads1256.elf.pdb"
 )
 

@@ -6,5 +6,5 @@
 
 #IncludeRegexTransform: 
 
-E:/ads1256_stm32/Optical_signal_measurement/Core/Startup/startup_stm32f401ccux.s
+/home/wt/Documents/STM32_Proj/ads1256/Core/Startup/startup_stm32f401ccux.s
 

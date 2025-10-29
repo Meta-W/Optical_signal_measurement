@@ -4,14 +4,15 @@
 #include "string.h"
 #include "stdio.h"
 #include "tim.h"
-#include "usart.h"   // °üº¬ USART ¾ä±ú¶¨Òå£¨Èç huart1£©
+#include "usart.h"   // åŒ…å« USART å¥æŸ„å®šä¹‰ï¼ˆå¦‚ huart1ï¼‰
 #include "ads1256/ads1256.h"
+#include "ads1256/ads125x.h"
 #include "../usr/KEY/key.h"
 #include "../usr/app_main.h"
 
 
 void key_event_handler(uint8_t key_id, key_event_t event);
-#define ADC_MAX_NUM 2*36 //3×éADC,Ã¿×é×î¶à´æ´¢5¸öÖµ
+#define ADC_MAX_NUM 2*36 //3ç»„ADC,æ¯ç»„æœ€å¤šå­˜å‚¨5ä¸ªå€¼
 uint16_t ADC_Values[ADC_MAX_NUM]={0};
 uint16_t adc_value_flg=0;
 uint16_t ADC_Switch=0;
@@ -25,46 +26,58 @@ uint32_t adc_index[6];
 
 enum {IDE,MEASURE,PRINT,STOP,ADC_TEST};
 
-void ADC_Continuous(void)
+
+ADS125X_t adc1;
+
+int ads_test(void)
 {
-    ADC_ConfigTypeDef ADCConfig;//ADCÅäÖÃ½á¹¹Ìå
+    HAL_TIM_Base_Start(&htim1);
+    adc1.csPort = ADS1256_CS_GPIO_Port;
+    adc1.csPin = ADS1256_CS_Pin;
+    adc1.drdyPort = ADS1256_DRDY_GPIO_Port;
+    adc1.drdyPin = ADS1256_DRDY_Pin;
+    adc1.rstPort = GPIOC;
+    adc1.rstPin = GPIO_PIN_13;
+    adc1.vref = 2.5f;
+    adc1.oscFreq = ADS125X_OSC_FREQ;
 
-    ADCConfig.AIN_P=AdcAin_AIN0;//ÊäÈëADC²âÁ¿PÍ¨µÀ
-    ADCConfig.AIN_N=AdcAin_AINCOM;//ÊäÈëADC²âÁ¿NÍ¨µÀ
-    ADCConfig.AinBuf=AdcInBuf_ON;//´ò¿ªÊäÈë»º³å
-    ADCConfig.ClockOut=AdcClockOut_OFF;//7.68MÊ±ÖÓÊä³ö¹Ø±Õ
-    ADCConfig.PGA=AdcPga_GAN1;//ÄÚÖÃ·Å´óÆ÷·Å´ó±¶Êı
-    ADCConfig.SenserTestCurrent=AdcTestCurrent_OFF;//¹Ø±Õ²âÊÔµçÁ÷
-    ADCConfig.SPS=AdcSpeed_100SPS;//ADC²ÉÑùÂÊ10sps
-    ADCConfig.ADC_RefVol=2.5;//ADC²Î¿¼Ô´µçÑ¹
-    if(ADS1256_config(ADCConfig)!=0)//ADC¼Ä´æÆ÷ÅäÖÃ
-    {
-        printf("ADS1256 init fail,RESET!!error code:%d\r\n",ADS1256_config(ADCConfig));
-        HAL_Delay(1000);
-//        NVIC_SystemReset();
-    }
-    ADS1256_WAKEUP();//»½ĞÑµ¥Æ¬»ú
-    while(ADS1256_DRDY()!=0){};//µÈ´ıADC×¼±¸ºÃ
-    ADS1256_AdjSELF();//¶ÔADC½øĞĞÒ»´ÎÄÚ²¿Ğ£×¼
-    while(ADS1256_DRDY()!=0){};//µÈ´ıADC×¼±¸ºÃ
-    ADS1256_SYNC();   //AD×ª»»Í¬²½
-    ADS1256_WAKEUP(); //Æô¶¯Í¬²½
-    while(ADS1256_DRDY()!=0){};//µÈ´ıADC×¼±¸ºÃ	
+    printf("\n");
+    printf("ADC config...\n");
+    //When we start the ADS1256, the preconfiguration already sets the MUX to [AIN0+AINCOM].
+    // 10 SPS / PGA=1 / buffer off
+    ADS125X_Init(&adc1, &hspi1, ADS125X_DRATE_10SPS, ADS125X_PGA1, 0);
 
-    ADS1256_RDATAC();//·¢ËÍÁ¬Ğø¶ÁÈ¡ADCÖ¸Áî
-    HAL_Delay(15);//µÈ´ı×îÉÙ50¸öADCÊ±ÖÓÖÜÆÚ
-    while(1)//Ñ­»·²ÉÑù
-    {
-        if(ADS1256_DRDY()==0)
-        {
-            int32_t Vol=ADS1256_ContinuousRead_AdcData(); //¶ÁÒ»´Î24Î»×ª»¯Êı¾İ
-            double VolF=ADS1256_DataFormatting(Vol,ADCConfig.ADC_RefVol,0x01<<ADCConfig.PGA);//°ÑADC×ª»»ÎªµçÑ¹Öµ
-            if(Vol & 0x00800000) Vol = -((~Vol) & 0x00FFFFFF);//´¦Àí¸ºÊı
-            printf("ADC=%8d    vol=%.6lfV\r\n",Vol,VolF);//´®¿Ú·¢ËÍµçÑ¹
-        }
-//        HAL_Delay(500);
+    printf("...done\n");
+    /* USER CODE END 2 */
+
+
+    /* Infinite loop */
+    /* USER CODE BEGIN WHILE */
+    while (1) {
+        //you can use this way
+        float volt[2] = { 0.0f, 0.0f };
+        ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
+        volt[0] = ADS125X_ADC_ReadVolt(&adc1);
+        printf("%.15f\n", volt[0]);
+
+        // ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN1);
+        // ADS125X_ChannelDiff_Set(&adc1, ADS125X_MUXP_AIN0, ADS125X_MUXN_AIN1);
+        // volt[1] = ADS125X_ADC_ReadVolt(&adc1);
+        // printf("%.15f\n", volt[1]);
+
+
+        //or this way
+    //  ADS125X_DRDY_Wait(&adc1);
+    //  ADS125X_cycle_Through_Channels(&adc1, volt)
+
+        HAL_Delay(100);
+        /* USER CODE END WHILE */
+
+        /* USER CODE BEGIN 3 */
     }
+    /* USER CODE END 3 */
 }
+
 
 /**
  * @brief ???
@@ -82,13 +95,20 @@ void app_main(void)
     key_set_callback(key_event_handler);
     HAL_TIM_Base_Start_IT(&htim11);
     HAL_TIM_Base_Start(&htim3);
-
+    HAL_GPIO_WritePin(ADS1256_CS_GPIO_Port,ADS1256_CS_Pin,0);
 //    HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 //    HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_1);
 //    HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2);
 //    HAL_ADC_Start_IT(&hadc1);
     HAL_Delay(1000);
-    ADC_Continuous();
+    // ADS1256_Init();
+    ads_test();
+    while(1)
+    {
+
+        printf("%lf\r\n",ADS1256ReadData(1));
+        HAL_Delay(500);
+    }
     uint8_t state=IDE;
     /* ??? */
     while(1)
@@ -307,11 +327,11 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
     }
 }
 
-//ADC×ª»»Íê³É×Ô¶¯µ÷ÓÃº¯Êı
+//ADCè½¬æ¢å®Œæˆè‡ªåŠ¨è°ƒç”¨å‡½æ•°
 
 
 
-// ÖØ¶¨Ïò printf µ½´®¿Ú
+// é‡å®šå‘ printf åˆ°ä¸²å£
 int _write(int file, char *ptr, int len)
 {
     for (int i = 0; i < len; i++)
