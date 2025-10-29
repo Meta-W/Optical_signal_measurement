@@ -38,23 +38,35 @@ CMakeFiles/ads1256.elf.dir/Core/Src/main.c.obj: \
  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/spi.h \
+ /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/dma.h \
  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/main.h \
+ /home/wt/Documents/STM32_Proj/ads1256/FATFS/App/fatfs.h \
+ /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff.h \
+ /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/integer.h \
+ /home/wt/Documents/STM32_Proj/ads1256/FATFS/Target/ffconf.h \
+ /usr/arm-none-eabi/include/stdlib.h \
+ /usr/arm-none-eabi/include/machine/ieeefp.h \
+ /usr/arm-none-eabi/include/_ansi.h /usr/arm-none-eabi/include/newlib.h \
+ /usr/arm-none-eabi/include/sys/config.h \
+ /usr/arm-none-eabi/include/sys/reent.h \
+ /usr/arm-none-eabi/include/_ansi.h \
+ /usr/arm-none-eabi/include/sys/cdefs.h \
+ /usr/arm-none-eabi/include/sys/_types.h \
+ /usr/arm-none-eabi/include/machine/_types.h \
+ /usr/arm-none-eabi/include/sys/lock.h \
+ /usr/arm-none-eabi/include/machine/stdlib.h \
+ /usr/arm-none-eabi/include/alloca.h \
+ /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff_gen_drv.h \
+ /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/diskio.h \
+ /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff.h \
+ /home/wt/Documents/STM32_Proj/ads1256/FATFS/Target/user_diskio.h \
+ /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/spi.h \
  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/tim.h \
  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/usart.h \
  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/gpio.h \
  /home/wt/Documents/STM32_Proj/ads1256/Core/Src/../../usr/app_main.h \
- /usr/arm-none-eabi/include/stdio.h /usr/arm-none-eabi/include/_ansi.h \
- /usr/arm-none-eabi/include/newlib.h \
- /usr/arm-none-eabi/include/sys/config.h \
- /usr/arm-none-eabi/include/machine/ieeefp.h \
- /usr/arm-none-eabi/include/sys/cdefs.h \
+ /usr/arm-none-eabi/include/stdio.h \
  /usr/lib/gcc/arm-none-eabi/14.2.1/include/stdarg.h \
- /usr/arm-none-eabi/include/sys/reent.h \
- /usr/arm-none-eabi/include/_ansi.h \
- /usr/arm-none-eabi/include/sys/_types.h \
- /usr/arm-none-eabi/include/machine/_types.h \
- /usr/arm-none-eabi/include/sys/lock.h \
  /usr/arm-none-eabi/include/sys/stdio.h \
  /usr/arm-none-eabi/include/string.h \
  /usr/arm-none-eabi/include/sys/_locale.h \

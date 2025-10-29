@@ -136,6 +136,30 @@ ads1256.elf/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/build
 .PHONY : ads1256.elf/fast
 
+Core/Src/dma.obj: Core/Src/dma.c.obj
+.PHONY : Core/Src/dma.obj
+
+# target to build an object file
+Core/Src/dma.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.obj
+.PHONY : Core/Src/dma.c.obj
+
+Core/Src/dma.i: Core/Src/dma.c.i
+.PHONY : Core/Src/dma.i
+
+# target to preprocess a source file
+Core/Src/dma.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.i
+.PHONY : Core/Src/dma.c.i
+
+Core/Src/dma.s: Core/Src/dma.c.s
+.PHONY : Core/Src/dma.s
+
+# target to generate assembly for a file
+Core/Src/dma.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.s
+.PHONY : Core/Src/dma.c.s
+
 Core/Src/gpio.obj: Core/Src/gpio.c.obj
 .PHONY : Core/Src/gpio.obj
 
@@ -792,6 +816,126 @@ Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.s
 .PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.s
 
+FATFS/App/fatfs.obj: FATFS/App/fatfs.c.obj
+.PHONY : FATFS/App/fatfs.obj
+
+# target to build an object file
+FATFS/App/fatfs.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/FATFS/App/fatfs.c.obj
+.PHONY : FATFS/App/fatfs.c.obj
+
+FATFS/App/fatfs.i: FATFS/App/fatfs.c.i
+.PHONY : FATFS/App/fatfs.i
+
+# target to preprocess a source file
+FATFS/App/fatfs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/FATFS/App/fatfs.c.i
+.PHONY : FATFS/App/fatfs.c.i
+
+FATFS/App/fatfs.s: FATFS/App/fatfs.c.s
+.PHONY : FATFS/App/fatfs.s
+
+# target to generate assembly for a file
+FATFS/App/fatfs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/FATFS/App/fatfs.c.s
+.PHONY : FATFS/App/fatfs.c.s
+
+FATFS/Target/user_diskio.obj: FATFS/Target/user_diskio.c.obj
+.PHONY : FATFS/Target/user_diskio.obj
+
+# target to build an object file
+FATFS/Target/user_diskio.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/FATFS/Target/user_diskio.c.obj
+.PHONY : FATFS/Target/user_diskio.c.obj
+
+FATFS/Target/user_diskio.i: FATFS/Target/user_diskio.c.i
+.PHONY : FATFS/Target/user_diskio.i
+
+# target to preprocess a source file
+FATFS/Target/user_diskio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/FATFS/Target/user_diskio.c.i
+.PHONY : FATFS/Target/user_diskio.c.i
+
+FATFS/Target/user_diskio.s: FATFS/Target/user_diskio.c.s
+.PHONY : FATFS/Target/user_diskio.s
+
+# target to generate assembly for a file
+FATFS/Target/user_diskio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/FATFS/Target/user_diskio.c.s
+.PHONY : FATFS/Target/user_diskio.c.s
+
+Middlewares/Third_Party/FatFs/src/diskio.obj: Middlewares/Third_Party/FatFs/src/diskio.c.obj
+.PHONY : Middlewares/Third_Party/FatFs/src/diskio.obj
+
+# target to build an object file
+Middlewares/Third_Party/FatFs/src/diskio.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.obj
+.PHONY : Middlewares/Third_Party/FatFs/src/diskio.c.obj
+
+Middlewares/Third_Party/FatFs/src/diskio.i: Middlewares/Third_Party/FatFs/src/diskio.c.i
+.PHONY : Middlewares/Third_Party/FatFs/src/diskio.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/FatFs/src/diskio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.i
+.PHONY : Middlewares/Third_Party/FatFs/src/diskio.c.i
+
+Middlewares/Third_Party/FatFs/src/diskio.s: Middlewares/Third_Party/FatFs/src/diskio.c.s
+.PHONY : Middlewares/Third_Party/FatFs/src/diskio.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/FatFs/src/diskio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.s
+.PHONY : Middlewares/Third_Party/FatFs/src/diskio.c.s
+
+Middlewares/Third_Party/FatFs/src/ff.obj: Middlewares/Third_Party/FatFs/src/ff.c.obj
+.PHONY : Middlewares/Third_Party/FatFs/src/ff.obj
+
+# target to build an object file
+Middlewares/Third_Party/FatFs/src/ff.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff.c.obj
+.PHONY : Middlewares/Third_Party/FatFs/src/ff.c.obj
+
+Middlewares/Third_Party/FatFs/src/ff.i: Middlewares/Third_Party/FatFs/src/ff.c.i
+.PHONY : Middlewares/Third_Party/FatFs/src/ff.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/FatFs/src/ff.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff.c.i
+.PHONY : Middlewares/Third_Party/FatFs/src/ff.c.i
+
+Middlewares/Third_Party/FatFs/src/ff.s: Middlewares/Third_Party/FatFs/src/ff.c.s
+.PHONY : Middlewares/Third_Party/FatFs/src/ff.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/FatFs/src/ff.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff.c.s
+.PHONY : Middlewares/Third_Party/FatFs/src/ff.c.s
+
+Middlewares/Third_Party/FatFs/src/ff_gen_drv.obj: Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.obj
+.PHONY : Middlewares/Third_Party/FatFs/src/ff_gen_drv.obj
+
+# target to build an object file
+Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.obj
+.PHONY : Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.obj
+
+Middlewares/Third_Party/FatFs/src/ff_gen_drv.i: Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.i
+.PHONY : Middlewares/Third_Party/FatFs/src/ff_gen_drv.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.i
+.PHONY : Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.i
+
+Middlewares/Third_Party/FatFs/src/ff_gen_drv.s: Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.s
+.PHONY : Middlewares/Third_Party/FatFs/src/ff_gen_drv.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.s
+.PHONY : Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.s
+
 usr/KEY/key.obj: usr/KEY/key.c.obj
 .PHONY : usr/KEY/key.obj
 
@@ -864,6 +1008,30 @@ usr/app_main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/app_main.c.s
 .PHONY : usr/app_main.c.s
 
+usr/sdcard/sd.obj: usr/sdcard/sd.c.obj
+.PHONY : usr/sdcard/sd.obj
+
+# target to build an object file
+usr/sdcard/sd.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj
+.PHONY : usr/sdcard/sd.c.obj
+
+usr/sdcard/sd.i: usr/sdcard/sd.c.i
+.PHONY : usr/sdcard/sd.i
+
+# target to preprocess a source file
+usr/sdcard/sd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.i
+.PHONY : usr/sdcard/sd.c.i
+
+usr/sdcard/sd.s: usr/sdcard/sd.c.s
+.PHONY : usr/sdcard/sd.s
+
+# target to generate assembly for a file
+usr/sdcard/sd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.s
+.PHONY : usr/sdcard/sd.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -874,6 +1042,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ads1256.elf"
+	@echo "... Core/Src/dma.obj"
+	@echo "... Core/Src/dma.i"
+	@echo "... Core/Src/dma.s"
 	@echo "... Core/Src/gpio.obj"
 	@echo "... Core/Src/gpio.i"
 	@echo "... Core/Src/gpio.s"
@@ -956,6 +1127,21 @@ help:
 	@echo "... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.obj"
 	@echo "... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.i"
 	@echo "... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.s"
+	@echo "... FATFS/App/fatfs.obj"
+	@echo "... FATFS/App/fatfs.i"
+	@echo "... FATFS/App/fatfs.s"
+	@echo "... FATFS/Target/user_diskio.obj"
+	@echo "... FATFS/Target/user_diskio.i"
+	@echo "... FATFS/Target/user_diskio.s"
+	@echo "... Middlewares/Third_Party/FatFs/src/diskio.obj"
+	@echo "... Middlewares/Third_Party/FatFs/src/diskio.i"
+	@echo "... Middlewares/Third_Party/FatFs/src/diskio.s"
+	@echo "... Middlewares/Third_Party/FatFs/src/ff.obj"
+	@echo "... Middlewares/Third_Party/FatFs/src/ff.i"
+	@echo "... Middlewares/Third_Party/FatFs/src/ff.s"
+	@echo "... Middlewares/Third_Party/FatFs/src/ff_gen_drv.obj"
+	@echo "... Middlewares/Third_Party/FatFs/src/ff_gen_drv.i"
+	@echo "... Middlewares/Third_Party/FatFs/src/ff_gen_drv.s"
 	@echo "... usr/KEY/key.obj"
 	@echo "... usr/KEY/key.i"
 	@echo "... usr/KEY/key.s"
@@ -965,6 +1151,9 @@ help:
 	@echo "... usr/app_main.obj"
 	@echo "... usr/app_main.i"
 	@echo "... usr/app_main.s"
+	@echo "... usr/sdcard/sd.obj"
+	@echo "... usr/sdcard/sd.i"
+	@echo "... usr/sdcard/sd.s"
 .PHONY : help
 
 

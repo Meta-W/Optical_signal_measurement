@@ -67,6 +67,8 @@ void Error_Handler(void);
 #define ADS1256_CS_GPIO_Port GPIOB
 #define ADS1256_RESET_Pin GPIO_PIN_2
 #define ADS1256_RESET_GPIO_Port GPIOB
+#define SD_CS_Pin GPIO_PIN_13
+#define SD_CS_GPIO_Port GPIOB
 #define LED1_Pin GPIO_PIN_8
 #define LED1_GPIO_Port GPIOA
 

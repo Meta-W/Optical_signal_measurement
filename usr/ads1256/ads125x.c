@@ -86,6 +86,10 @@ uint8_t ADS125X_Init(ADS125X_t *ads, SPI_HandleTypeDef *hspi, uint8_t drate,
 	HAL_Delay(10);
 	ADS125X_CMD_Send(ads, ADS125X_CMD_SELFCAL);
 	HAL_Delay(5);
+	// ADS1256_SendCmd(ADS1256_CMD_RDATAC);
+	ADS125X_CMD_Send(ads, ADS125X_CMD_RDATAC);
+
+	HAL_Delay(5);
 	ADS125X_CS(ads, 0);
 	ADS125X_DRDY_Wait(ads);  // wait ADS1256 to settle after self calibration
 

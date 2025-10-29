@@ -26,10 +26,14 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "/home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"
   "/home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include"
   "/home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include"
+  "/home/wt/Documents/STM32_Proj/ads1256/FATFS/App"
+  "/home/wt/Documents/STM32_Proj/ads1256/FATFS/Target"
+  "/home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src"
   )
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/wt/Documents/STM32_Proj/ads1256/Core/Src/dma.c" "CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.obj.d"
   "/home/wt/Documents/STM32_Proj/ads1256/Core/Src/gpio.c" "CMakeFiles/ads1256.elf.dir/Core/Src/gpio.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Core/Src/gpio.c.obj.d"
   "/home/wt/Documents/STM32_Proj/ads1256/Core/Src/main.c" "CMakeFiles/ads1256.elf.dir/Core/Src/main.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Core/Src/main.c.obj.d"
   "/home/wt/Documents/STM32_Proj/ads1256/Core/Src/spi.c" "CMakeFiles/ads1256.elf.dir/Core/Src/spi.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Core/Src/spi.c.obj.d"
@@ -57,9 +61,15 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj.d"
   "/home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj.d"
   "/home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj.d"
+  "/home/wt/Documents/STM32_Proj/ads1256/FATFS/App/fatfs.c" "CMakeFiles/ads1256.elf.dir/FATFS/App/fatfs.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/FATFS/App/fatfs.c.obj.d"
+  "/home/wt/Documents/STM32_Proj/ads1256/FATFS/Target/user_diskio.c" "CMakeFiles/ads1256.elf.dir/FATFS/Target/user_diskio.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/FATFS/Target/user_diskio.c.obj.d"
+  "/home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/diskio.c" "CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.obj.d"
+  "/home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff.c" "CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff.c.obj.d"
+  "/home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c" "CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.obj.d"
   "/home/wt/Documents/STM32_Proj/ads1256/usr/KEY/key.c" "CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj.d"
   "/home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads125x.c" "CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj.d"
   "/home/wt/Documents/STM32_Proj/ads1256/usr/app_main.c" "CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj.d"
+  "/home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd.c" "CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -62,4 +62,11 @@ CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj: \
  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/main.h \
  /home/wt/Documents/STM32_Proj/ads1256/usr/../usr/app_main.h \
  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/gpio.h \
- /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/spi.h
+ /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/spi.h \
+ /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd.h \
+ /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff.h \
+ /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/integer.h \
+ /home/wt/Documents/STM32_Proj/ads1256/FATFS/Target/ffconf.h \
+ /usr/arm-none-eabi/include/stdlib.h \
+ /usr/arm-none-eabi/include/machine/stdlib.h \
+ /usr/arm-none-eabi/include/alloca.h

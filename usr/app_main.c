@@ -8,10 +8,13 @@
 #include "ads1256/ads125x.h"
 #include "../usr/KEY/key.h"
 #include "../usr/app_main.h"
+#include "sdcard/sd.h"
 
 
 void key_event_handler(uint8_t key_id, key_event_t event);
 #define ADC_MAX_NUM 2*36 //3组ADC,每组最多存储5个值
+#define  ADS1256_CS_LOW() HAL_GPIO_WritePin(ADS1256_CS_GPIO_Port,ADS1256_CS_Pin,0); //3组ADC,每组最多存储5个值
+#define  ADS1256_CS_HIGH() HAL_GPIO_WritePin(ADS1256_CS_GPIO_Port,ADS1256_CS_Pin,1); //3组ADC,每组最多存储5个值
 uint16_t ADC_Values[ADC_MAX_NUM]={0};
 uint16_t adc_value_flg=0;
 uint16_t ADC_Switch=0;
@@ -24,9 +27,65 @@ static uint8_t pul_index=0;
 uint32_t adc_index[6];
 
 enum {IDE,MEASURE,PRINT,STOP,ADC_TEST};
+uint8_t ADS1256_RxBuf[3];      // 存储原始 24bit 数据
+int32_t ADS1256_RawData = 0;   // 转换后的有符号整数
+float ADS1256_Voltage = 0;     // 转换后的电压
 
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+    if (GPIO_Pin == GPIO_PIN_0)
+    {
+        // printf("PB0 EXTI triggered!\n");
+        HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
+        ADS1256_CS_LOW();
+        // 启动 DMA 从 SPI 读取 3 字节数据
+        // HAL_SPI_Receive_DMA(&hspi1, ADS1256_RxBuf, 3);
+    }
+}
 
+void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi)
+{
+    if (hspi->Instance == SPI1)
+    {
+        ADS1256_CS_HIGH();
+
+        ADS1256_RawData = ((int32_t)ADS1256_RxBuf[0] << 16) |
+                          ((int32_t)ADS1256_RxBuf[1] << 8)  |
+                          ((int32_t)ADS1256_RxBuf[2]);
+
+        // 24bit 转换为有符号
+        if (ADS1256_RawData & 0x800000)
+            ADS1256_RawData |= 0xFF000000;
+
+        ADS1256_Voltage = (float)ADS1256_RawData / 8388607.0f * 2.5f; // Vref=2.5V
+
+        printf("ADC=%ld, V=%.6fV\r\n", ADS1256_RawData, ADS1256_Voltage);
+    }
+}
 ADS125X_t adc1;
+char SD_FileName[] = "hello.txt";
+uint8_t WriteBuffer[] = "01 write buff to sd \r\n";
+uint8_t write_cnt =0;	//写SD卡次数
+
+int sd_test(void)
+{
+
+    Get_SDCard_Capacity();	//得到使用内存并选择格式化
+
+    while (1)
+    {
+        HAL_Delay(500);
+        WritetoSD(SD_FileName, WriteBuffer,sizeof(WriteBuffer));
+        HAL_Delay(500);
+        write_cnt ++;
+
+        while(write_cnt > 5)
+        {
+            printf(" while \r\n");
+            HAL_Delay(500);
+        }
+    }
+}
 
 int ads_test(void)
 {
@@ -44,20 +103,19 @@ int ads_test(void)
     printf("ADC config...\n");
     //When we start the ADS1256, the preconfiguration already sets the MUX to [AIN0+AINCOM].
     // 10 SPS / PGA=1 / buffer off
-    ADS125X_Init(&adc1, &hspi1, ADS125X_DRATE_10SPS, ADS125X_PGA1, 0);
+    ADS125X_Init(&adc1, &hspi1, ADS125X_DRATE_30SPS, ADS125X_PGA1, 0);
 
     printf("...done\n");
-    /* USER CODE END 2 */
-
-
-    /* Infinite loop */
-    /* USER CODE BEGIN WHILE */
+    HAL_NVIC_SetPriority(EXTI0_IRQn,0,0);
+    HAL_NVIC_EnableIRQ(EXTI0_IRQn);
     while (1) {
+        HAL_SPI_Receive_DMA(&hspi1, ADS1256_RxBuf, 3);
+
         //you can use this way
-        float volt[2] = { 0.0f, 0.0f };
-        ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
-        volt[0] = ADS125X_ADC_ReadVolt(&adc1);
-        printf("%.15f\n", volt[0]);
+        // float volt[2] = { 0.0f, 0.0f };
+        // ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
+        // volt[0] = ADS125X_ADC_ReadVolt(&adc1);
+        // printf("%.15f\n", volt[0]);
 
         // ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN1);
         // ADS125X_ChannelDiff_Set(&adc1, ADS125X_MUXP_AIN0, ADS125X_MUXN_AIN1);
@@ -99,6 +157,7 @@ void app_main(void)
 //    HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_1);
 //    HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2);
 //    HAL_ADC_Start_IT(&hadc1);
+    // sd_test();
     HAL_Delay(1000);
     // ADS1256_Init();
     ads_test();
@@ -255,29 +314,29 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
  * @brief GPIO????????
  * @param GPIO_Pin ???????
  */
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
-    if(GPIO_Pin == GPIO_PIN_0)
-    {
-        // ????DRDY????
-        GPIO_PinState pin_state = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0);
-
-        if(pin_state == GPIO_PIN_RESET)
-        {
-            // ???????????????
-            HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_8);
-            // ????????????????
-            // ???????????????????
-        }
-        else
-        {
-            // ???????????????
-            HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_8);
-
-            // ??????????????
-        }
-    }
-}
+// void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+// {
+//     if(GPIO_Pin == GPIO_PIN_0)
+//     {
+//         // ????DRDY????
+//         GPIO_PinState pin_state = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0);
+//
+//         if(pin_state == GPIO_PIN_RESET)
+//         {
+//             // ???????????????
+//             HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_8);
+//             // ????????????????
+//             // ???????????????????
+//         }
+//         else
+//         {
+//             // ???????????????
+//             HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_8);
+//
+//             // ??????????????
+//         }
+//     }
+// }
 uint32_t adc_index_value=0;
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {

@@ -49,7 +49,7 @@ else ()
     add_compile_options(-Og -g)
 endif ()
 
-include_directories(Core/Inc Drivers/STM32F4xx_HAL_Driver/Inc Drivers/STM32F4xx_HAL_Driver/Inc/Legacy Drivers/CMSIS/Device/ST/STM32F4xx/Include Drivers/CMSIS/Include)
+include_directories(Core/Inc Drivers/STM32F4xx_HAL_Driver/Inc Drivers/STM32F4xx_HAL_Driver/Inc/Legacy Drivers/CMSIS/Device/ST/STM32F4xx/Include Drivers/CMSIS/Include FATFS/App FATFS/Target Middlewares/Third_Party/FatFs/src)
 
 add_definitions(-DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xC)
 
@@ -64,8 +64,13 @@ add_link_options(-T ${LINKER_SCRIPT})
 add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT}
         usr/app_main.c
         usr/KEY/key.c
-        usr/ads1256/ads1256.c
-        usr/ads1256/ads125x.c)
+        usr/ads1256/ads125x.c
+        FATFS/App/fatfs.c
+        FATFS/Target/user_diskio.c
+        Middlewares/Third_Party/FatFs/src/ff.c
+        Middlewares/Third_Party/FatFs/src/ff_gen_drv.c
+        Middlewares/Third_Party/FatFs/src/diskio.c
+        usr/sdcard/sd.c)
 
 set(HEX_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.hex)
 set(BIN_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.bin)
