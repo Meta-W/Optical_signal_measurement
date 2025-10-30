@@ -936,6 +936,54 @@ Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.s
 .PHONY : Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.s
 
+Middlewares/Third_Party/FatFs/src/option/ccsbcs.obj: Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj
+.PHONY : Middlewares/Third_Party/FatFs/src/option/ccsbcs.obj
+
+# target to build an object file
+Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj
+.PHONY : Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj
+
+Middlewares/Third_Party/FatFs/src/option/ccsbcs.i: Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.i
+.PHONY : Middlewares/Third_Party/FatFs/src/option/ccsbcs.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.i
+.PHONY : Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.i
+
+Middlewares/Third_Party/FatFs/src/option/ccsbcs.s: Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.s
+.PHONY : Middlewares/Third_Party/FatFs/src/option/ccsbcs.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.s
+.PHONY : Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.s
+
+Middlewares/Third_Party/FatFs/src/option/syscall.obj: Middlewares/Third_Party/FatFs/src/option/syscall.c.obj
+.PHONY : Middlewares/Third_Party/FatFs/src/option/syscall.obj
+
+# target to build an object file
+Middlewares/Third_Party/FatFs/src/option/syscall.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj
+.PHONY : Middlewares/Third_Party/FatFs/src/option/syscall.c.obj
+
+Middlewares/Third_Party/FatFs/src/option/syscall.i: Middlewares/Third_Party/FatFs/src/option/syscall.c.i
+.PHONY : Middlewares/Third_Party/FatFs/src/option/syscall.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/FatFs/src/option/syscall.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.i
+.PHONY : Middlewares/Third_Party/FatFs/src/option/syscall.c.i
+
+Middlewares/Third_Party/FatFs/src/option/syscall.s: Middlewares/Third_Party/FatFs/src/option/syscall.c.s
+.PHONY : Middlewares/Third_Party/FatFs/src/option/syscall.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/FatFs/src/option/syscall.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.s
+.PHONY : Middlewares/Third_Party/FatFs/src/option/syscall.c.s
+
 usr/KEY/key.obj: usr/KEY/key.c.obj
 .PHONY : usr/KEY/key.obj
 
@@ -1008,29 +1056,101 @@ usr/app_main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/app_main.c.s
 .PHONY : usr/app_main.c.s
 
-usr/sdcard/sd.obj: usr/sdcard/sd.c.obj
-.PHONY : usr/sdcard/sd.obj
+usr/sdcard/sd_benchmark.obj: usr/sdcard/sd_benchmark.c.obj
+.PHONY : usr/sdcard/sd_benchmark.obj
 
 # target to build an object file
-usr/sdcard/sd.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj
-.PHONY : usr/sdcard/sd.c.obj
+usr/sdcard/sd_benchmark.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj
+.PHONY : usr/sdcard/sd_benchmark.c.obj
 
-usr/sdcard/sd.i: usr/sdcard/sd.c.i
-.PHONY : usr/sdcard/sd.i
+usr/sdcard/sd_benchmark.i: usr/sdcard/sd_benchmark.c.i
+.PHONY : usr/sdcard/sd_benchmark.i
 
 # target to preprocess a source file
-usr/sdcard/sd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.i
-.PHONY : usr/sdcard/sd.c.i
+usr/sdcard/sd_benchmark.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.i
+.PHONY : usr/sdcard/sd_benchmark.c.i
 
-usr/sdcard/sd.s: usr/sdcard/sd.c.s
-.PHONY : usr/sdcard/sd.s
+usr/sdcard/sd_benchmark.s: usr/sdcard/sd_benchmark.c.s
+.PHONY : usr/sdcard/sd_benchmark.s
 
 # target to generate assembly for a file
-usr/sdcard/sd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.s
-.PHONY : usr/sdcard/sd.c.s
+usr/sdcard/sd_benchmark.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.s
+.PHONY : usr/sdcard/sd_benchmark.c.s
+
+usr/sdcard/sd_diskio_spi.obj: usr/sdcard/sd_diskio_spi.c.obj
+.PHONY : usr/sdcard/sd_diskio_spi.obj
+
+# target to build an object file
+usr/sdcard/sd_diskio_spi.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj
+.PHONY : usr/sdcard/sd_diskio_spi.c.obj
+
+usr/sdcard/sd_diskio_spi.i: usr/sdcard/sd_diskio_spi.c.i
+.PHONY : usr/sdcard/sd_diskio_spi.i
+
+# target to preprocess a source file
+usr/sdcard/sd_diskio_spi.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.i
+.PHONY : usr/sdcard/sd_diskio_spi.c.i
+
+usr/sdcard/sd_diskio_spi.s: usr/sdcard/sd_diskio_spi.c.s
+.PHONY : usr/sdcard/sd_diskio_spi.s
+
+# target to generate assembly for a file
+usr/sdcard/sd_diskio_spi.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.s
+.PHONY : usr/sdcard/sd_diskio_spi.c.s
+
+usr/sdcard/sd_functions.obj: usr/sdcard/sd_functions.c.obj
+.PHONY : usr/sdcard/sd_functions.obj
+
+# target to build an object file
+usr/sdcard/sd_functions.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj
+.PHONY : usr/sdcard/sd_functions.c.obj
+
+usr/sdcard/sd_functions.i: usr/sdcard/sd_functions.c.i
+.PHONY : usr/sdcard/sd_functions.i
+
+# target to preprocess a source file
+usr/sdcard/sd_functions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.i
+.PHONY : usr/sdcard/sd_functions.c.i
+
+usr/sdcard/sd_functions.s: usr/sdcard/sd_functions.c.s
+.PHONY : usr/sdcard/sd_functions.s
+
+# target to generate assembly for a file
+usr/sdcard/sd_functions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.s
+.PHONY : usr/sdcard/sd_functions.c.s
+
+usr/sdcard/sd_spi.obj: usr/sdcard/sd_spi.c.obj
+.PHONY : usr/sdcard/sd_spi.obj
+
+# target to build an object file
+usr/sdcard/sd_spi.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj
+.PHONY : usr/sdcard/sd_spi.c.obj
+
+usr/sdcard/sd_spi.i: usr/sdcard/sd_spi.c.i
+.PHONY : usr/sdcard/sd_spi.i
+
+# target to preprocess a source file
+usr/sdcard/sd_spi.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.i
+.PHONY : usr/sdcard/sd_spi.c.i
+
+usr/sdcard/sd_spi.s: usr/sdcard/sd_spi.c.s
+.PHONY : usr/sdcard/sd_spi.s
+
+# target to generate assembly for a file
+usr/sdcard/sd_spi.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ads1256.elf.dir/build.make CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.s
+.PHONY : usr/sdcard/sd_spi.c.s
 
 # Help Target
 help:
@@ -1142,6 +1262,12 @@ help:
 	@echo "... Middlewares/Third_Party/FatFs/src/ff_gen_drv.obj"
 	@echo "... Middlewares/Third_Party/FatFs/src/ff_gen_drv.i"
 	@echo "... Middlewares/Third_Party/FatFs/src/ff_gen_drv.s"
+	@echo "... Middlewares/Third_Party/FatFs/src/option/ccsbcs.obj"
+	@echo "... Middlewares/Third_Party/FatFs/src/option/ccsbcs.i"
+	@echo "... Middlewares/Third_Party/FatFs/src/option/ccsbcs.s"
+	@echo "... Middlewares/Third_Party/FatFs/src/option/syscall.obj"
+	@echo "... Middlewares/Third_Party/FatFs/src/option/syscall.i"
+	@echo "... Middlewares/Third_Party/FatFs/src/option/syscall.s"
 	@echo "... usr/KEY/key.obj"
 	@echo "... usr/KEY/key.i"
 	@echo "... usr/KEY/key.s"
@@ -1151,9 +1277,18 @@ help:
 	@echo "... usr/app_main.obj"
 	@echo "... usr/app_main.i"
 	@echo "... usr/app_main.s"
-	@echo "... usr/sdcard/sd.obj"
-	@echo "... usr/sdcard/sd.i"
-	@echo "... usr/sdcard/sd.s"
+	@echo "... usr/sdcard/sd_benchmark.obj"
+	@echo "... usr/sdcard/sd_benchmark.i"
+	@echo "... usr/sdcard/sd_benchmark.s"
+	@echo "... usr/sdcard/sd_diskio_spi.obj"
+	@echo "... usr/sdcard/sd_diskio_spi.i"
+	@echo "... usr/sdcard/sd_diskio_spi.s"
+	@echo "... usr/sdcard/sd_functions.obj"
+	@echo "... usr/sdcard/sd_functions.i"
+	@echo "... usr/sdcard/sd_functions.s"
+	@echo "... usr/sdcard/sd_spi.obj"
+	@echo "... usr/sdcard/sd_spi.i"
+	@echo "... usr/sdcard/sd_spi.s"
 .PHONY : help
 
 

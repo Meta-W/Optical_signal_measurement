@@ -1190,7 +1190,6 @@ CMakeFiles/ads1256.elf.dir/FATFS/App/fatfs.c.obj: /home/wt/Documents/STM32_Proj/
 
 CMakeFiles/ads1256.elf.dir/FATFS/Target/user_diskio.c.obj: /home/wt/Documents/STM32_Proj/ads1256/FATFS/Target/user_diskio.c \
   /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/main.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/spi.h \
   /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/stm32f4xx_hal_conf.h \
   /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h \
   /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
@@ -1220,7 +1219,6 @@ CMakeFiles/ads1256.elf.dir/FATFS/Target/user_diskio.c.obj: /home/wt/Documents/ST
   /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
   /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
-  /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd.h \
   /home/wt/Documents/STM32_Proj/ads1256/FATFS/Target/ffconf.h \
   /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/diskio.h \
   /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff.h \
@@ -1422,6 +1420,116 @@ CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.obj: /
   /usr/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h \
   /usr/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h
 
+CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c \
+  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/main.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/stm32f4xx_hal_conf.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/cmsis_compiler.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/cmsis_gcc.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/cmsis_version.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/core_cm4.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/mpu_armv7.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+  /home/wt/Documents/STM32_Proj/ads1256/FATFS/Target/ffconf.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/integer.h \
+  /usr/arm-none-eabi/include/_ansi.h \
+  /usr/arm-none-eabi/include/_newlib_version.h \
+  /usr/arm-none-eabi/include/alloca.h \
+  /usr/arm-none-eabi/include/machine/_default_types.h \
+  /usr/arm-none-eabi/include/machine/_types.h \
+  /usr/arm-none-eabi/include/machine/ieeefp.h \
+  /usr/arm-none-eabi/include/machine/stdlib.h \
+  /usr/arm-none-eabi/include/newlib.h \
+  /usr/arm-none-eabi/include/stdint.h \
+  /usr/arm-none-eabi/include/stdlib.h \
+  /usr/arm-none-eabi/include/sys/_intsup.h \
+  /usr/arm-none-eabi/include/sys/_stdint.h \
+  /usr/arm-none-eabi/include/sys/_types.h \
+  /usr/arm-none-eabi/include/sys/cdefs.h \
+  /usr/arm-none-eabi/include/sys/config.h \
+  /usr/arm-none-eabi/include/sys/features.h \
+  /usr/arm-none-eabi/include/sys/lock.h \
+  /usr/arm-none-eabi/include/sys/reent.h \
+  /usr/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h \
+  /usr/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h
+
+CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/option/syscall.c \
+  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/main.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/stm32f4xx_hal_conf.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/cmsis_compiler.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/cmsis_gcc.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/cmsis_version.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/core_cm4.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/mpu_armv7.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+  /home/wt/Documents/STM32_Proj/ads1256/FATFS/Target/ffconf.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/integer.h \
+  /usr/arm-none-eabi/include/_ansi.h \
+  /usr/arm-none-eabi/include/_newlib_version.h \
+  /usr/arm-none-eabi/include/alloca.h \
+  /usr/arm-none-eabi/include/machine/_default_types.h \
+  /usr/arm-none-eabi/include/machine/_types.h \
+  /usr/arm-none-eabi/include/machine/ieeefp.h \
+  /usr/arm-none-eabi/include/machine/stdlib.h \
+  /usr/arm-none-eabi/include/newlib.h \
+  /usr/arm-none-eabi/include/stdint.h \
+  /usr/arm-none-eabi/include/stdlib.h \
+  /usr/arm-none-eabi/include/sys/_intsup.h \
+  /usr/arm-none-eabi/include/sys/_stdint.h \
+  /usr/arm-none-eabi/include/sys/_types.h \
+  /usr/arm-none-eabi/include/sys/cdefs.h \
+  /usr/arm-none-eabi/include/sys/config.h \
+  /usr/arm-none-eabi/include/sys/features.h \
+  /usr/arm-none-eabi/include/sys/lock.h \
+  /usr/arm-none-eabi/include/sys/reent.h \
+  /usr/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h \
+  /usr/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h
+
 CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/KEY/key.c \
   /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/main.h \
   /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/stm32f4xx_hal_conf.h \
@@ -1552,13 +1660,18 @@ CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj: /home/wt/Documents/STM32_Proj/ads
   /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
   /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
   /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+  /home/wt/Documents/STM32_Proj/ads1256/FATFS/App/fatfs.h \
   /home/wt/Documents/STM32_Proj/ads1256/FATFS/Target/ffconf.h \
+  /home/wt/Documents/STM32_Proj/ads1256/FATFS/Target/user_diskio.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/diskio.h \
   /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff_gen_drv.h \
   /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/integer.h \
   /home/wt/Documents/STM32_Proj/ads1256/usr/KEY/key.h \
   /home/wt/Documents/STM32_Proj/ads1256/usr/app_main.h \
   /home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads125x.h \
-  /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd.h \
+  /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_benchmark.h \
+  /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_functions.h \
   /usr/arm-none-eabi/include/_ansi.h \
   /usr/arm-none-eabi/include/_newlib_version.h \
   /usr/arm-none-eabi/include/alloca.h \
@@ -1588,9 +1701,76 @@ CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj: /home/wt/Documents/STM32_Proj/ads
   /usr/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h \
   /usr/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h
 
-CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd.c \
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_benchmark.c \
   /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/main.h \
-  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/spi.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/stm32f4xx_hal_conf.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/cmsis_compiler.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/cmsis_gcc.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/cmsis_version.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/core_cm4.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/mpu_armv7.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+  /home/wt/Documents/STM32_Proj/ads1256/FATFS/App/fatfs.h \
+  /home/wt/Documents/STM32_Proj/ads1256/FATFS/Target/ffconf.h \
+  /home/wt/Documents/STM32_Proj/ads1256/FATFS/Target/user_diskio.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/diskio.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff_gen_drv.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/integer.h \
+  /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_benchmark.h \
+  /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_functions.h \
+  /usr/arm-none-eabi/include/_ansi.h \
+  /usr/arm-none-eabi/include/_newlib_version.h \
+  /usr/arm-none-eabi/include/alloca.h \
+  /usr/arm-none-eabi/include/machine/_default_types.h \
+  /usr/arm-none-eabi/include/machine/_types.h \
+  /usr/arm-none-eabi/include/machine/ieeefp.h \
+  /usr/arm-none-eabi/include/machine/stdlib.h \
+  /usr/arm-none-eabi/include/newlib.h \
+  /usr/arm-none-eabi/include/stdint.h \
+  /usr/arm-none-eabi/include/stdio.h \
+  /usr/arm-none-eabi/include/stdlib.h \
+  /usr/arm-none-eabi/include/string.h \
+  /usr/arm-none-eabi/include/strings.h \
+  /usr/arm-none-eabi/include/sys/_intsup.h \
+  /usr/arm-none-eabi/include/sys/_locale.h \
+  /usr/arm-none-eabi/include/sys/_stdint.h \
+  /usr/arm-none-eabi/include/sys/_types.h \
+  /usr/arm-none-eabi/include/sys/cdefs.h \
+  /usr/arm-none-eabi/include/sys/config.h \
+  /usr/arm-none-eabi/include/sys/features.h \
+  /usr/arm-none-eabi/include/sys/lock.h \
+  /usr/arm-none-eabi/include/sys/reent.h \
+  /usr/arm-none-eabi/include/sys/stdio.h \
+  /usr/arm-none-eabi/include/sys/string.h \
+  /usr/lib/gcc/arm-none-eabi/14.2.1/include/stdarg.h \
+  /usr/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h \
+  /usr/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h
+
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_diskio_spi.c \
+  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/main.h \
   /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/stm32f4xx_hal_conf.h \
   /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h \
   /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
@@ -1621,9 +1801,11 @@ CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj: /home/wt/Documents/STM32_Proj/ad
   /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
   /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
   /home/wt/Documents/STM32_Proj/ads1256/FATFS/Target/ffconf.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/diskio.h \
   /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff_gen_drv.h \
   /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/integer.h \
-  /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd.h \
+  /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_spi.h \
   /usr/arm-none-eabi/include/_ansi.h \
   /usr/arm-none-eabi/include/_newlib_version.h \
   /usr/arm-none-eabi/include/alloca.h \
@@ -1648,8 +1830,143 @@ CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj: /home/wt/Documents/STM32_Proj/ad
   /usr/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h \
   /usr/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h
 
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_functions.c \
+  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/main.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/stm32f4xx_hal_conf.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/cmsis_compiler.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/cmsis_gcc.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/cmsis_version.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/core_cm4.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/mpu_armv7.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+  /home/wt/Documents/STM32_Proj/ads1256/FATFS/App/fatfs.h \
+  /home/wt/Documents/STM32_Proj/ads1256/FATFS/Target/ffconf.h \
+  /home/wt/Documents/STM32_Proj/ads1256/FATFS/Target/user_diskio.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/diskio.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff_gen_drv.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/integer.h \
+  /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_diskio_spi.h \
+  /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_spi.h \
+  /usr/arm-none-eabi/include/_ansi.h \
+  /usr/arm-none-eabi/include/_newlib_version.h \
+  /usr/arm-none-eabi/include/alloca.h \
+  /usr/arm-none-eabi/include/machine/_default_types.h \
+  /usr/arm-none-eabi/include/machine/_types.h \
+  /usr/arm-none-eabi/include/machine/ieeefp.h \
+  /usr/arm-none-eabi/include/machine/stdlib.h \
+  /usr/arm-none-eabi/include/newlib.h \
+  /usr/arm-none-eabi/include/stdint.h \
+  /usr/arm-none-eabi/include/stdio.h \
+  /usr/arm-none-eabi/include/stdlib.h \
+  /usr/arm-none-eabi/include/string.h \
+  /usr/arm-none-eabi/include/strings.h \
+  /usr/arm-none-eabi/include/sys/_intsup.h \
+  /usr/arm-none-eabi/include/sys/_locale.h \
+  /usr/arm-none-eabi/include/sys/_stdint.h \
+  /usr/arm-none-eabi/include/sys/_types.h \
+  /usr/arm-none-eabi/include/sys/cdefs.h \
+  /usr/arm-none-eabi/include/sys/config.h \
+  /usr/arm-none-eabi/include/sys/features.h \
+  /usr/arm-none-eabi/include/sys/lock.h \
+  /usr/arm-none-eabi/include/sys/reent.h \
+  /usr/arm-none-eabi/include/sys/stdio.h \
+  /usr/arm-none-eabi/include/sys/string.h \
+  /usr/lib/gcc/arm-none-eabi/14.2.1/include/stdarg.h \
+  /usr/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h \
+  /usr/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h
 
-/home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd.c:
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_spi.c \
+  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/main.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/stm32f4xx_hal_conf.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/cmsis_compiler.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/cmsis_gcc.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/cmsis_version.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/core_cm4.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include/mpu_armv7.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+  /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_spi.h \
+  /usr/arm-none-eabi/include/_ansi.h \
+  /usr/arm-none-eabi/include/_newlib_version.h \
+  /usr/arm-none-eabi/include/machine/_default_types.h \
+  /usr/arm-none-eabi/include/machine/_types.h \
+  /usr/arm-none-eabi/include/machine/ieeefp.h \
+  /usr/arm-none-eabi/include/newlib.h \
+  /usr/arm-none-eabi/include/stdint.h \
+  /usr/arm-none-eabi/include/stdio.h \
+  /usr/arm-none-eabi/include/string.h \
+  /usr/arm-none-eabi/include/strings.h \
+  /usr/arm-none-eabi/include/sys/_intsup.h \
+  /usr/arm-none-eabi/include/sys/_locale.h \
+  /usr/arm-none-eabi/include/sys/_stdint.h \
+  /usr/arm-none-eabi/include/sys/_types.h \
+  /usr/arm-none-eabi/include/sys/cdefs.h \
+  /usr/arm-none-eabi/include/sys/config.h \
+  /usr/arm-none-eabi/include/sys/features.h \
+  /usr/arm-none-eabi/include/sys/lock.h \
+  /usr/arm-none-eabi/include/sys/reent.h \
+  /usr/arm-none-eabi/include/sys/stdio.h \
+  /usr/arm-none-eabi/include/sys/string.h \
+  /usr/lib/gcc/arm-none-eabi/14.2.1/include/stdarg.h \
+  /usr/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h \
+  /usr/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h
+
+
+/home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_functions.c:
+
+/home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_spi.h:
+
+/home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_diskio_spi.h:
+
+/home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_diskio_spi.c:
+
+/home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_functions.h:
+
+/home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_benchmark.h:
 
 /home/wt/Documents/STM32_Proj/ads1256/usr/app_main.c:
 
@@ -1747,6 +2064,10 @@ CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj: /home/wt/Documents/STM32_Proj/ad
 
 /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h:
 
+/home/wt/Documents/STM32_Proj/ads1256/usr/KEY/key.c:
+
+/usr/arm-none-eabi/include/sys/times.h:
+
 /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c:
 
 /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
@@ -1825,6 +2146,8 @@ CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj: /home/wt/Documents/STM32_Proj/ad
 
 /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/stm32f4xx_it.h:
 
+/home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_spi.c:
+
 /home/wt/Documents/STM32_Proj/ads1256/Core/Src/syscalls.c:
 
 /usr/arm-none-eabi/include/machine/_endian.h:
@@ -1861,8 +2184,6 @@ CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj: /home/wt/Documents/STM32_Proj/ad
 
 /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c:
 
-/home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c:
-
 /usr/arm-none-eabi/include/sys/signal.h:
 
 /usr/arm-none-eabi/include/sys/time.h:
@@ -1881,10 +2202,6 @@ CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj: /home/wt/Documents/STM32_Proj/ad
 
 /home/wt/Documents/STM32_Proj/ads1256/Core/Src/usart.c:
 
-/usr/arm-none-eabi/include/sys/times.h:
-
-/home/wt/Documents/STM32_Proj/ads1256/usr/KEY/key.c:
-
 /home/wt/Documents/STM32_Proj/ads1256/usr/app_main.h:
 
 /usr/arm-none-eabi/include/machine/endian.h:
@@ -1893,9 +2210,9 @@ CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj: /home/wt/Documents/STM32_Proj/ad
 
 /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c:
 
-/home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c:
+/home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_benchmark.c:
 
-/home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd.h:
+/home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c:
 
 /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/integer.h:
 
@@ -1913,4 +2230,10 @@ CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj: /home/wt/Documents/STM32_Proj/ad
 
 /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/diskio.c:
 
+/home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/option/syscall.c:
+
 /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff.c:
+
+/home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c:
+
+/home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c:

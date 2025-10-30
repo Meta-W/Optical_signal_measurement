@@ -589,19 +589,89 @@ CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.s: cmake_f
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/diskio.c -o CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.s
 
-CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
-CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd.c
-CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj -MF CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj.d -o CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd.c
+CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
+CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/option/syscall.c
+CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj -MF CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj.d -o CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/option/syscall.c
 
-CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd.c > CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.i
+CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/option/syscall.c > CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.i
 
-CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd.c -o CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.s
+CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/option/syscall.c -o CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.s
+
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_benchmark.c
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj -MF CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj.d -o CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_benchmark.c
+
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_benchmark.c > CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.i
+
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_benchmark.c -o CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.s
+
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_diskio_spi.c
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj -MF CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj.d -o CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_diskio_spi.c
+
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_diskio_spi.c > CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.i
+
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_diskio_spi.c -o CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.s
+
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_functions.c
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj -MF CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj.d -o CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_functions.c
+
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_functions.c > CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.i
+
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_functions.c -o CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.s
+
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_spi.c
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj -MF CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj.d -o CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_spi.c
+
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_spi.c > CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.i
+
+CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_spi.c -o CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.s
+
+CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
+CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c
+CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj -MF CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj.d -o CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c
+
+CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c > CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.i
+
+CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c -o CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.s
 
 # Object files for target ads1256.elf
 ads1256_elf_OBJECTS = \
@@ -642,7 +712,12 @@ ads1256_elf_OBJECTS = \
 "CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff.c.obj" \
 "CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.obj" \
 "CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.obj" \
-"CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj"
+"CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj" \
+"CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj" \
+"CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj" \
+"CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj" \
+"CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj" \
+"CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj"
 
 # External object files for target ads1256.elf
 ads1256_elf_EXTERNAL_OBJECTS =
@@ -684,10 +759,15 @@ ads1256.elf: CMakeFiles/ads1256.elf.dir/FATFS/Target/user_diskio.c.obj
 ads1256.elf: CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff.c.obj
 ads1256.elf: CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.obj
 ads1256.elf: CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.obj
-ads1256.elf: CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj
+ads1256.elf: CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj
+ads1256.elf: CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj
+ads1256.elf: CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj
+ads1256.elf: CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj
+ads1256.elf: CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj
+ads1256.elf: CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj
 ads1256.elf: CMakeFiles/ads1256.elf.dir/build.make
 ads1256.elf: CMakeFiles/ads1256.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Linking C executable ads1256.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Linking C executable ads1256.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ads1256.elf.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building /home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/ads1256.hex"
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building /home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/ads1256.bin"

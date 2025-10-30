@@ -99,7 +99,6 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM1_Init();
   MX_SPI2_Init();
-  MX_FATFS_Init();
   /* USER CODE BEGIN 2 */
   NVIC_DisableIRQ(EXTI0_IRQn);
   app_main();

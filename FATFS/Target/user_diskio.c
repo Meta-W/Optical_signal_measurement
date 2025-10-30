@@ -33,7 +33,6 @@
 
 /* USER CODE BEGIN DECL */
 #include "diskio.h"		/* Declarations of disk functions */
-#include "../../usr/sdcard/sd.h"
 /* Includes ------------------------------------------------------------------*/
 #include <string.h>
 #include "ff_gen_drv.h"
@@ -83,16 +82,7 @@ DSTATUS USER_initialize (
 )
 {
   /* USER CODE BEGIN INIT */
-  uint8_t res;
-  res = SD_init();//SD_Initialize()
-  if(res)//STM32 SPI的bug,在sd卡操作失败的时候如果不执行下面的语句,可能导致SPI读写异常
-  {
-    SPI_setspeed(SPI_BAUDRATEPRESCALER_256);
-    spi_readwrite(0xff);//提供额外的8个时钟
-    SPI_setspeed(SPI_BAUDRATEPRESCALER_2);
-  }
-  if(res)return  STA_NOINIT;
-  else return RES_OK; //初始化成功
+  return RES_OK; //初始化成功
   /* USER CODE END INIT */
 }
 
@@ -136,23 +126,7 @@ DRESULT USER_read (
 )
 {
   /* USER CODE BEGIN READ */
-  uint8_t res;
-  if( !count )
-  {
-    return RES_PARERR;  /* count不能等于0，否则返回参数错误 */
-  }
-  switch (pdrv)
-  {
-  case 0:
-    res=SD_ReadDisk(buff,sector,count);
-    if(res == 0){
-      return RES_OK;
-    }else{
-      return RES_ERROR;
-    }
-  default:
-    return RES_ERROR;
-  }
+
   /* USER CODE END READ */
 }
 
@@ -174,22 +148,7 @@ DRESULT USER_write (
 {
   /* USER CODE BEGIN WRITE */
   /* USER CODE HERE */
-  uint8_t  res;
-  if( !count )
-  {
-    return RES_PARERR;  /* count不能等于0，否则返回参数错误 */
-  }
-  switch (pdrv)
-  {
-  case 0:
-    res=SD_WriteDisk((uint8_t *)buff,sector,count);
-    if(res == 0){
-      return RES_OK;
-    }else{
-      return RES_ERROR;
-    }
-  default:return RES_ERROR;
-  }
+
   /* USER CODE END WRITE */
 }
 #endif /* _USE_WRITE == 1 */
@@ -209,34 +168,7 @@ DRESULT USER_ioctl (
 )
 {
   /* USER CODE BEGIN IOCTL */
-  DRESULT res;
-  switch(cmd)
-  {
-  case CTRL_SYNC:
-    SD_CS(1);
-    do{
-      HAL_Delay(20);
-    }while(spi_readwrite(0xFF)!=0xFF);
-    res=RES_OK;
-    SD_CS(0);
-    break;
-  case GET_SECTOR_SIZE:
-    *(WORD*)buff = 512;
-    res = RES_OK;
-    break;
-  case GET_BLOCK_SIZE:
-    *(WORD*)buff = 8;
-    res = RES_OK;
-    break;
-  case GET_SECTOR_COUNT:
-    *(DWORD*)buff = SD_GetSectorCount();
-    res = RES_OK;
-    break;
-  default:
-    res = RES_PARERR;
-    break;
-  }
-  return res;
+
   /* USER CODE END IOCTL */
 }
 #endif /* _USE_IOCTL == 1 */

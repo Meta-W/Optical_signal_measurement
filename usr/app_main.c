@@ -8,7 +8,8 @@
 #include "ads1256/ads125x.h"
 #include "../usr/KEY/key.h"
 #include "../usr/app_main.h"
-#include "sdcard/sd.h"
+#include "sdcard/sd_functions.h"
+#include "sdcard/sd_benchmark.h"
 
 
 void key_event_handler(uint8_t key_id, key_event_t event);
@@ -67,25 +68,9 @@ char SD_FileName[] = "hello.txt";
 uint8_t WriteBuffer[] = "01 write buff to sd \r\n";
 uint8_t write_cnt =0;	//写SD卡次数
 
-int sd_test(void)
-{
+uint8_t bufr[80];
+UINT br;
 
-    Get_SDCard_Capacity();	//得到使用内存并选择格式化
-
-    while (1)
-    {
-        HAL_Delay(500);
-        WritetoSD(SD_FileName, WriteBuffer,sizeof(WriteBuffer));
-        HAL_Delay(500);
-        write_cnt ++;
-
-        while(write_cnt > 5)
-        {
-            printf(" while \r\n");
-            HAL_Delay(500);
-        }
-    }
-}
 
 int ads_test(void)
 {
@@ -134,8 +119,32 @@ int ads_test(void)
     }
     /* USER CODE END 3 */
 }
+    extern Disk_drvTypeDef disk;
 
-
+int sd_test(void)
+{
+    // memset(&disk, 0, sizeof(disk));
+#define max_records 20
+    CsvRecord myrecords[max_records];
+    CsvRecord1 myrecords1[max_records];
+    int record_count = 0;
+    sd_mount();
+    // sd_list_files();
+    sd_read_csv_ver1("0:/test.csv", myrecords1, max_records, &record_count);
+    sd_unmount();
+    // sd_mount();
+    // sd_list_files();
+    // sd_append_file("File6.txt", "This is Appended Text\n");
+    // sd_read_file("File6.txt", bufr, 80, &br);
+    // printf("DATA from File:::: %s\n\n",bufr);
+    // sd_unmount();
+    while (1) ;
+}
+    //
+    // sd_mount();
+    // sd_read_file("0:/F1/F1F2/File5.TXT", bufr, 50, &br);
+    // printf("DATA from File:::: %s\n\n",bufr);
+    // sd_unmount();}
 /**
  * @brief ???
  */
@@ -157,7 +166,8 @@ void app_main(void)
 //    HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_1);
 //    HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2);
 //    HAL_ADC_Start_IT(&hadc1);
-    // sd_test();
+    sd_test();
+
     HAL_Delay(1000);
     // ADS1256_Init();
     ads_test();

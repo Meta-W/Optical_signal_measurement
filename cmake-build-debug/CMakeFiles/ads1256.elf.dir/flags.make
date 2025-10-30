@@ -5,13 +5,13 @@
 # compile C with /usr/bin/arm-none-eabi-gcc
 ASM_DEFINES = -DDEBUG -DSTM32F401xC -DUSE_HAL_DRIVER
 
-ASM_INCLUDES = -I/home/wt/Documents/STM32_Proj/ads1256/Core/Inc -I/home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include -I/home/wt/Documents/STM32_Proj/ads1256/FATFS/App -I/home/wt/Documents/STM32_Proj/ads1256/FATFS/Target -I/home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src
+ASM_INCLUDES = -I/home/wt/Documents/STM32_Proj/ads1256/Core/Inc -I/home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include -I/home/wt/Documents/STM32_Proj/ads1256/FATFS/App -I/home/wt/Documents/STM32_Proj/ads1256/FATFS/Target -I/home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src -I/home/wt/Documents/STM32_Proj/ads1256/usr/sdcard
 
 ASM_FLAGS = -g -mcpu=cortex-m4 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -x assembler-with-cpp -Og -g
 
 C_DEFINES = -DDEBUG -DSTM32F401xC -DUSE_HAL_DRIVER
 
-C_INCLUDES = -I/home/wt/Documents/STM32_Proj/ads1256/Core/Inc -I/home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include -I/home/wt/Documents/STM32_Proj/ads1256/FATFS/App -I/home/wt/Documents/STM32_Proj/ads1256/FATFS/Target -I/home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src
+C_INCLUDES = -I/home/wt/Documents/STM32_Proj/ads1256/Core/Inc -I/home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/wt/Documents/STM32_Proj/ads1256/Drivers/CMSIS/Include -I/home/wt/Documents/STM32_Proj/ads1256/FATFS/App -I/home/wt/Documents/STM32_Proj/ads1256/FATFS/Target -I/home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src -I/home/wt/Documents/STM32_Proj/ads1256/usr/sdcard
 
 C_FLAGS = -g -std=gnu11 -fdiagnostics-color=always -mcpu=cortex-m4 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Og -g
 

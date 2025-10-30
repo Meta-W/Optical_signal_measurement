@@ -29,6 +29,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "/home/wt/Documents/STM32_Proj/ads1256/FATFS/App"
   "/home/wt/Documents/STM32_Proj/ads1256/FATFS/Target"
   "/home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src"
+  "/home/wt/Documents/STM32_Proj/ads1256/usr/sdcard"
   )
 
 # The set of dependency files which are needed:
@@ -66,10 +67,15 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/diskio.c" "CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.obj.d"
   "/home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff.c" "CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff.c.obj.d"
   "/home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c" "CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.obj.d"
+  "/home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c" "CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj.d"
+  "/home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/option/syscall.c" "CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj.d"
   "/home/wt/Documents/STM32_Proj/ads1256/usr/KEY/key.c" "CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj.d"
   "/home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads125x.c" "CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj.d"
   "/home/wt/Documents/STM32_Proj/ads1256/usr/app_main.c" "CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj.d"
-  "/home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd.c" "CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/usr/sdcard/sd.c.obj.d"
+  "/home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_benchmark.c" "CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj.d"
+  "/home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_diskio_spi.c" "CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj.d"
+  "/home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_functions.c" "CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj.d"
+  "/home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_spi.c" "CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
