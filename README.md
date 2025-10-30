@@ -1,1 +1,4 @@
 # Optical_signal_measurement
+
+
+1.7500k采样率在5ms内能够采集37个数据，去除采集函数中的浮点运算38个

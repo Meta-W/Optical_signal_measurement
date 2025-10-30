@@ -277,7 +277,8 @@ void app_main(void)
             if (adc_get_flag==0)
             {
                 state=IDE;
-                printf("index%d\n",volt_buf_index);
+                printf("i%d\n",volt_buf_index);
+
                 volt_buf_index = 0;
 
             }
