@@ -10,6 +10,7 @@
 #include "../usr/app_main.h"
 #include "sdcard/sd_functions.h"
 #include "sdcard/sd_benchmark.h"
+#include "fatfs.h"
 
 
 void key_event_handler(uint8_t key_id, key_event_t event);
@@ -121,17 +122,58 @@ int ads_test(void)
 }
     extern Disk_drvTypeDef disk;
 
+
+
+FIL file;
+FRESULT res;
+UINT bw;
+
+void write_csv_example(void)
+{
+
+    // 打开 CSV 文件，若存在则覆盖
+    res = f_open(&file, "0:/data.csv", FA_CREATE_ALWAYS | FA_WRITE);
+    if (res != FR_OK) { printf("f_open failed: %d\r\n", res); return; }
+
+    // 写入 CSV 表头
+    char header[] = "Time(ms),Temperature(C),Voltage(V)\r\n";
+    f_write(&file, header, strlen(header), &bw);
+
+    // 写入多行数据
+    for (int i = 0; i < 10; i++)
+    {
+        char line[64];
+        int time_ms = i*100;
+        float temp = 25.0 + i*0.5;
+        float volt = 3.3 - i*0.05;
+
+        // 格式化成 CSV 行
+        sprintf(line, "%d,%.2f,%.2f\r\n", time_ms, temp, volt);
+
+        // 写入文件
+        f_write(&file, line, strlen(line), &bw);
+    }
+
+    // 关闭文件
+    f_close(&file);
+    printf("CSV write finished!\r\n");
+}
+
 int sd_test(void)
 {
     // memset(&disk, 0, sizeof(disk));
+    // sd_benchmark();
+
 #define max_records 20
     CsvRecord myrecords[max_records];
     CsvRecord1 myrecords1[max_records];
     int record_count = 0;
     sd_mount();
     // sd_list_files();
-    sd_read_csv_ver1("0:/test.csv", myrecords1, max_records, &record_count);
+    // sd_read_csv_ver1("0:/test.csv", myrecords1, max_records, &record_count);
+    write_csv_example();
     sd_unmount();
+
     // sd_mount();
     // sd_list_files();
     // sd_append_file("File6.txt", "This is Appended Text\n");
@@ -166,7 +208,7 @@ void app_main(void)
 //    HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_1);
 //    HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2);
 //    HAL_ADC_Start_IT(&hadc1);
-    sd_test();
+    // sd_test();
 
     HAL_Delay(1000);
     // ADS1256_Init();
