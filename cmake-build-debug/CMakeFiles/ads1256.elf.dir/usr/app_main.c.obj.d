@@ -63,6 +63,19 @@ CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj: \
  /home/wt/Documents/STM32_Proj/ads1256/usr/../usr/app_main.h \
  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/gpio.h \
  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/spi.h \
+ /usr/arm-none-eabi/include/sys/stat.h /usr/arm-none-eabi/include/time.h \
+ /usr/arm-none-eabi/include/machine/time.h \
+ /usr/arm-none-eabi/include/sys/types.h \
+ /usr/arm-none-eabi/include/machine/endian.h \
+ /usr/arm-none-eabi/include/machine/_endian.h \
+ /usr/arm-none-eabi/include/sys/select.h \
+ /usr/arm-none-eabi/include/sys/_sigset.h \
+ /usr/arm-none-eabi/include/sys/_timeval.h \
+ /usr/arm-none-eabi/include/sys/timespec.h \
+ /usr/arm-none-eabi/include/sys/_timespec.h \
+ /usr/arm-none-eabi/include/sys/_pthreadtypes.h \
+ /usr/arm-none-eabi/include/sys/sched.h \
+ /usr/arm-none-eabi/include/machine/types.h \
  /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_functions.h \
  /home/wt/Documents/STM32_Proj/ads1256/FATFS/App/fatfs.h \
  /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff.h \

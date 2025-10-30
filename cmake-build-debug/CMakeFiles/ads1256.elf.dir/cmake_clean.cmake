@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.obj"
-  "CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.obj.d"
   "CMakeFiles/ads1256.elf.dir/Core/Src/gpio.c.obj"
   "CMakeFiles/ads1256.elf.dir/Core/Src/gpio.c.obj.d"
   "CMakeFiles/ads1256.elf.dir/Core/Src/main.c.obj"

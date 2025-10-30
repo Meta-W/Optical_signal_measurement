@@ -14,6 +14,6 @@
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Minimal optimization, debug info included
--- Configuring done (1.8s)
+-- Configuring done (1.5s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug

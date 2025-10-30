@@ -72,24 +72,10 @@ include CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/codegen:
 .PHONY : CMakeFiles/ads1256.elf.dir/codegen
 
-CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
-CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Core/Src/dma.c
-CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.obj -MF CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.obj.d -o CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Core/Src/dma.c
-
-CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wt/Documents/STM32_Proj/ads1256/Core/Src/dma.c > CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.i
-
-CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wt/Documents/STM32_Proj/ads1256/Core/Src/dma.c -o CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.s
-
 CMakeFiles/ads1256.elf.dir/Core/Src/gpio.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Core/Src/gpio.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Core/Src/gpio.c
 CMakeFiles/ads1256.elf.dir/Core/Src/gpio.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/gpio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/gpio.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Core/Src/gpio.c.obj -MF CMakeFiles/ads1256.elf.dir/Core/Src/gpio.c.obj.d -o CMakeFiles/ads1256.elf.dir/Core/Src/gpio.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Core/Src/gpio.c
 
 CMakeFiles/ads1256.elf.dir/Core/Src/gpio.c.i: cmake_force
@@ -103,7 +89,7 @@ CMakeFiles/ads1256.elf.dir/Core/Src/gpio.c.s: cmake_force
 CMakeFiles/ads1256.elf.dir/Core/Src/main.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Core/Src/main.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Core/Src/main.c
 CMakeFiles/ads1256.elf.dir/Core/Src/main.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/main.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/main.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Core/Src/main.c.obj -MF CMakeFiles/ads1256.elf.dir/Core/Src/main.c.obj.d -o CMakeFiles/ads1256.elf.dir/Core/Src/main.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Core/Src/main.c
 
 CMakeFiles/ads1256.elf.dir/Core/Src/main.c.i: cmake_force
@@ -117,7 +103,7 @@ CMakeFiles/ads1256.elf.dir/Core/Src/main.c.s: cmake_force
 CMakeFiles/ads1256.elf.dir/Core/Src/spi.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Core/Src/spi.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Core/Src/spi.c
 CMakeFiles/ads1256.elf.dir/Core/Src/spi.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/spi.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/spi.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Core/Src/spi.c.obj -MF CMakeFiles/ads1256.elf.dir/Core/Src/spi.c.obj.d -o CMakeFiles/ads1256.elf.dir/Core/Src/spi.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Core/Src/spi.c
 
 CMakeFiles/ads1256.elf.dir/Core/Src/spi.c.i: cmake_force
@@ -131,7 +117,7 @@ CMakeFiles/ads1256.elf.dir/Core/Src/spi.c.s: cmake_force
 CMakeFiles/ads1256.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Core/Src/stm32f4xx_hal_msp.c
 CMakeFiles/ads1256.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj -MF CMakeFiles/ads1256.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj.d -o CMakeFiles/ads1256.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Core/Src/stm32f4xx_hal_msp.c
 
 CMakeFiles/ads1256.elf.dir/Core/Src/stm32f4xx_hal_msp.c.i: cmake_force
@@ -145,7 +131,7 @@ CMakeFiles/ads1256.elf.dir/Core/Src/stm32f4xx_hal_msp.c.s: cmake_force
 CMakeFiles/ads1256.elf.dir/Core/Src/stm32f4xx_it.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Core/Src/stm32f4xx_it.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Core/Src/stm32f4xx_it.c
 CMakeFiles/ads1256.elf.dir/Core/Src/stm32f4xx_it.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/stm32f4xx_it.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/stm32f4xx_it.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Core/Src/stm32f4xx_it.c.obj -MF CMakeFiles/ads1256.elf.dir/Core/Src/stm32f4xx_it.c.obj.d -o CMakeFiles/ads1256.elf.dir/Core/Src/stm32f4xx_it.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Core/Src/stm32f4xx_it.c
 
 CMakeFiles/ads1256.elf.dir/Core/Src/stm32f4xx_it.c.i: cmake_force
@@ -159,7 +145,7 @@ CMakeFiles/ads1256.elf.dir/Core/Src/stm32f4xx_it.c.s: cmake_force
 CMakeFiles/ads1256.elf.dir/Core/Src/syscalls.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Core/Src/syscalls.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Core/Src/syscalls.c
 CMakeFiles/ads1256.elf.dir/Core/Src/syscalls.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/syscalls.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/syscalls.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Core/Src/syscalls.c.obj -MF CMakeFiles/ads1256.elf.dir/Core/Src/syscalls.c.obj.d -o CMakeFiles/ads1256.elf.dir/Core/Src/syscalls.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Core/Src/syscalls.c
 
 CMakeFiles/ads1256.elf.dir/Core/Src/syscalls.c.i: cmake_force
@@ -173,7 +159,7 @@ CMakeFiles/ads1256.elf.dir/Core/Src/syscalls.c.s: cmake_force
 CMakeFiles/ads1256.elf.dir/Core/Src/sysmem.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Core/Src/sysmem.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Core/Src/sysmem.c
 CMakeFiles/ads1256.elf.dir/Core/Src/sysmem.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/sysmem.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/sysmem.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Core/Src/sysmem.c.obj -MF CMakeFiles/ads1256.elf.dir/Core/Src/sysmem.c.obj.d -o CMakeFiles/ads1256.elf.dir/Core/Src/sysmem.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Core/Src/sysmem.c
 
 CMakeFiles/ads1256.elf.dir/Core/Src/sysmem.c.i: cmake_force
@@ -187,7 +173,7 @@ CMakeFiles/ads1256.elf.dir/Core/Src/sysmem.c.s: cmake_force
 CMakeFiles/ads1256.elf.dir/Core/Src/system_stm32f4xx.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Core/Src/system_stm32f4xx.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Core/Src/system_stm32f4xx.c
 CMakeFiles/ads1256.elf.dir/Core/Src/system_stm32f4xx.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/system_stm32f4xx.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/system_stm32f4xx.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Core/Src/system_stm32f4xx.c.obj -MF CMakeFiles/ads1256.elf.dir/Core/Src/system_stm32f4xx.c.obj.d -o CMakeFiles/ads1256.elf.dir/Core/Src/system_stm32f4xx.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Core/Src/system_stm32f4xx.c
 
 CMakeFiles/ads1256.elf.dir/Core/Src/system_stm32f4xx.c.i: cmake_force
@@ -201,7 +187,7 @@ CMakeFiles/ads1256.elf.dir/Core/Src/system_stm32f4xx.c.s: cmake_force
 CMakeFiles/ads1256.elf.dir/Core/Src/tim.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Core/Src/tim.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Core/Src/tim.c
 CMakeFiles/ads1256.elf.dir/Core/Src/tim.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/tim.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/tim.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Core/Src/tim.c.obj -MF CMakeFiles/ads1256.elf.dir/Core/Src/tim.c.obj.d -o CMakeFiles/ads1256.elf.dir/Core/Src/tim.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Core/Src/tim.c
 
 CMakeFiles/ads1256.elf.dir/Core/Src/tim.c.i: cmake_force
@@ -215,7 +201,7 @@ CMakeFiles/ads1256.elf.dir/Core/Src/tim.c.s: cmake_force
 CMakeFiles/ads1256.elf.dir/Core/Src/usart.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Core/Src/usart.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Core/Src/usart.c
 CMakeFiles/ads1256.elf.dir/Core/Src/usart.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/usart.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/ads1256.elf.dir/Core/Src/usart.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Core/Src/usart.c.obj -MF CMakeFiles/ads1256.elf.dir/Core/Src/usart.c.obj.d -o CMakeFiles/ads1256.elf.dir/Core/Src/usart.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Core/Src/usart.c
 
 CMakeFiles/ads1256.elf.dir/Core/Src/usart.c.i: cmake_force
@@ -228,7 +214,7 @@ CMakeFiles/ads1256.elf.dir/Core/Src/usart.c.s: cmake_force
 
 CMakeFiles/ads1256.elf.dir/Core/Startup/startup_stm32f401ccux.s.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Core/Startup/startup_stm32f401ccux.s.obj: /home/wt/Documents/STM32_Proj/ads1256/Core/Startup/startup_stm32f401ccux.s
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building ASM object CMakeFiles/ads1256.elf.dir/Core/Startup/startup_stm32f401ccux.s.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building ASM object CMakeFiles/ads1256.elf.dir/Core/Startup/startup_stm32f401ccux.s.obj"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/ads1256.elf.dir/Core/Startup/startup_stm32f401ccux.s.obj -c /home/wt/Documents/STM32_Proj/ads1256/Core/Startup/startup_stm32f401ccux.s
 
 CMakeFiles/ads1256.elf.dir/Core/Startup/startup_stm32f401ccux.s.i: cmake_force
@@ -242,7 +228,7 @@ CMakeFiles/ads1256.elf.dir/Core/Startup/startup_stm32f401ccux.s.s: cmake_force
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj -MF CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj.d -o CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
 
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.i: cmake_force
@@ -256,7 +242,7 @@ CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s: c
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj -MF CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj.d -o CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
 
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.i: cmake_force
@@ -270,7 +256,7 @@ CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj -MF CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj.d -o CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
 
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.i: cmake_force
@@ -284,7 +270,7 @@ CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj -MF CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj.d -o CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
 
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.i: cmake_force
@@ -298,7 +284,7 @@ CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj -MF CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj.d -o CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
 
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.i: cmake_force
@@ -312,7 +298,7 @@ CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj -MF CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj.d -o CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
 
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.i: cmake_force
@@ -326,7 +312,7 @@ CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj -MF CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj.d -o CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
 
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.i: cmake_force
@@ -340,7 +326,7 @@ CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj -MF CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj.d -o CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
 
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.i: cmake_force
@@ -354,7 +340,7 @@ CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj -MF CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj.d -o CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
 
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.i: cmake_force
@@ -368,7 +354,7 @@ CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj -MF CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj.d -o CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
 
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.i: cmake_force
@@ -382,7 +368,7 @@ CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj -MF CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj.d -o CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
 
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.i: cmake_force
@@ -396,7 +382,7 @@ CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj -MF CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj.d -o CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
 
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.i: cmake_force
@@ -410,7 +396,7 @@ CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj -MF CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj.d -o CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
 
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.i: cmake_force
@@ -424,7 +410,7 @@ CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj -MF CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj.d -o CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c
 
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.i: cmake_force
@@ -438,7 +424,7 @@ CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj -MF CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj.d -o CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
 
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.i: cmake_force
@@ -452,7 +438,7 @@ CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj -MF CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj.d -o CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
 
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.i: cmake_force
@@ -466,7 +452,7 @@ CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj -MF CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj.d -o CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
 
 CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.i: cmake_force
@@ -480,7 +466,7 @@ CMakeFiles/ads1256.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
 CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/app_main.c
 CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj -MF CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj.d -o CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/usr/app_main.c
 
 CMakeFiles/ads1256.elf.dir/usr/app_main.c.i: cmake_force
@@ -494,7 +480,7 @@ CMakeFiles/ads1256.elf.dir/usr/app_main.c.s: cmake_force
 CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/KEY/key.c
 CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj -MF CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj.d -o CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/usr/KEY/key.c
 
 CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.i: cmake_force
@@ -508,7 +494,7 @@ CMakeFiles/ads1256.elf.dir/usr/KEY/key.c.s: cmake_force
 CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads125x.c
 CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj -MF CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj.d -o CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/usr/ads1256/ads125x.c
 
 CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.i: cmake_force
@@ -522,7 +508,7 @@ CMakeFiles/ads1256.elf.dir/usr/ads1256/ads125x.c.s: cmake_force
 CMakeFiles/ads1256.elf.dir/FATFS/App/fatfs.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/FATFS/App/fatfs.c.obj: /home/wt/Documents/STM32_Proj/ads1256/FATFS/App/fatfs.c
 CMakeFiles/ads1256.elf.dir/FATFS/App/fatfs.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/ads1256.elf.dir/FATFS/App/fatfs.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/ads1256.elf.dir/FATFS/App/fatfs.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/FATFS/App/fatfs.c.obj -MF CMakeFiles/ads1256.elf.dir/FATFS/App/fatfs.c.obj.d -o CMakeFiles/ads1256.elf.dir/FATFS/App/fatfs.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/FATFS/App/fatfs.c
 
 CMakeFiles/ads1256.elf.dir/FATFS/App/fatfs.c.i: cmake_force
@@ -536,7 +522,7 @@ CMakeFiles/ads1256.elf.dir/FATFS/App/fatfs.c.s: cmake_force
 CMakeFiles/ads1256.elf.dir/FATFS/Target/user_diskio.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/FATFS/Target/user_diskio.c.obj: /home/wt/Documents/STM32_Proj/ads1256/FATFS/Target/user_diskio.c
 CMakeFiles/ads1256.elf.dir/FATFS/Target/user_diskio.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/ads1256.elf.dir/FATFS/Target/user_diskio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/ads1256.elf.dir/FATFS/Target/user_diskio.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/FATFS/Target/user_diskio.c.obj -MF CMakeFiles/ads1256.elf.dir/FATFS/Target/user_diskio.c.obj.d -o CMakeFiles/ads1256.elf.dir/FATFS/Target/user_diskio.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/FATFS/Target/user_diskio.c
 
 CMakeFiles/ads1256.elf.dir/FATFS/Target/user_diskio.c.i: cmake_force
@@ -550,7 +536,7 @@ CMakeFiles/ads1256.elf.dir/FATFS/Target/user_diskio.c.s: cmake_force
 CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff.c
 CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff.c.obj -MF CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff.c.obj.d -o CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff.c
 
 CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff.c.i: cmake_force
@@ -564,7 +550,7 @@ CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff.c.s: cmake_force
 CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c
 CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.obj -MF CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.obj.d -o CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c
 
 CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.i: cmake_force
@@ -578,7 +564,7 @@ CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c.s: cma
 CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/diskio.c
 CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.obj -MF CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.obj.d -o CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/diskio.c
 
 CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.i: cmake_force
@@ -592,7 +578,7 @@ CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/diskio.c.s: cmake_f
 CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/option/syscall.c
 CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj -MF CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj.d -o CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/option/syscall.c
 
 CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.i: cmake_force
@@ -606,7 +592,7 @@ CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/syscall.c.s:
 CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_benchmark.c
 CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj -MF CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj.d -o CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_benchmark.c
 
 CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.i: cmake_force
@@ -620,7 +606,7 @@ CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_benchmark.c.s: cmake_force
 CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_diskio_spi.c
 CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj -MF CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj.d -o CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_diskio_spi.c
 
 CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.i: cmake_force
@@ -634,7 +620,7 @@ CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_diskio_spi.c.s: cmake_force
 CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_functions.c
 CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj -MF CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj.d -o CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_functions.c
 
 CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.i: cmake_force
@@ -648,7 +634,7 @@ CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_functions.c.s: cmake_force
 CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj: /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_spi.c
 CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj -MF CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj.d -o CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/usr/sdcard/sd_spi.c
 
 CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.i: cmake_force
@@ -662,7 +648,7 @@ CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.s: cmake_force
 CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj: CMakeFiles/ads1256.elf.dir/flags.make
 CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj: /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c
 CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj: CMakeFiles/ads1256.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj -MF CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj.d -o CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj -c /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c
 
 CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.i: cmake_force
@@ -675,7 +661,6 @@ CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.s: 
 
 # Object files for target ads1256.elf
 ads1256_elf_OBJECTS = \
-"CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.obj" \
 "CMakeFiles/ads1256.elf.dir/Core/Src/gpio.c.obj" \
 "CMakeFiles/ads1256.elf.dir/Core/Src/main.c.obj" \
 "CMakeFiles/ads1256.elf.dir/Core/Src/spi.c.obj" \
@@ -722,7 +707,6 @@ ads1256_elf_OBJECTS = \
 # External object files for target ads1256.elf
 ads1256_elf_EXTERNAL_OBJECTS =
 
-ads1256.elf: CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.obj
 ads1256.elf: CMakeFiles/ads1256.elf.dir/Core/Src/gpio.c.obj
 ads1256.elf: CMakeFiles/ads1256.elf.dir/Core/Src/main.c.obj
 ads1256.elf: CMakeFiles/ads1256.elf.dir/Core/Src/spi.c.obj
@@ -767,7 +751,7 @@ ads1256.elf: CMakeFiles/ads1256.elf.dir/usr/sdcard/sd_spi.c.obj
 ads1256.elf: CMakeFiles/ads1256.elf.dir/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c.obj
 ads1256.elf: CMakeFiles/ads1256.elf.dir/build.make
 ads1256.elf: CMakeFiles/ads1256.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Linking C executable ads1256.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Linking C executable ads1256.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ads1256.elf.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building /home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/ads1256.hex"
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building /home/wt/Documents/STM32_Proj/ads1256/cmake-build-debug/ads1256.bin"

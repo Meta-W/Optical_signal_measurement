@@ -38,8 +38,6 @@ CMakeFiles/ads1256.elf.dir/Core/Src/main.c.obj: \
  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  /home/wt/Documents/STM32_Proj/ads1256/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/dma.h \
- /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/main.h \
  /home/wt/Documents/STM32_Proj/ads1256/FATFS/App/fatfs.h \
  /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff.h \
  /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/integer.h \
@@ -61,6 +59,7 @@ CMakeFiles/ads1256.elf.dir/Core/Src/main.c.obj: \
  /home/wt/Documents/STM32_Proj/ads1256/Middlewares/Third_Party/FatFs/src/ff.h \
  /home/wt/Documents/STM32_Proj/ads1256/FATFS/Target/user_diskio.h \
  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/spi.h \
+ /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/main.h \
  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/tim.h \
  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/usart.h \
  /home/wt/Documents/STM32_Proj/ads1256/Core/Inc/gpio.h \

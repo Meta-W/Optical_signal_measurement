@@ -63,6 +63,7 @@ void Error_Handler(void);
 #define KEY_1_GPIO_Port GPIOA
 #define ADS1256_DRDY_Pin GPIO_PIN_0
 #define ADS1256_DRDY_GPIO_Port GPIOB
+#define ADS1256_DRDY_EXTI_IRQn EXTI0_IRQn
 #define ADS1256_CS_Pin GPIO_PIN_1
 #define ADS1256_CS_GPIO_Port GPIOB
 #define ADS1256_RESET_Pin GPIO_PIN_2

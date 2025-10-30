@@ -3,7 +3,7 @@
 
 #include "main.h"
 
-#define DEBUG_ADS1255
+// #define DEBUG_ADS1255
 
 #ifdef DEBUG_ADS1255
 #include <stdio.h>
@@ -85,9 +85,10 @@ uint8_t ADS125X_Init(ADS125X_t *ads, SPI_HandleTypeDef *hspi, uint8_t drate,
 
 	HAL_Delay(10);
 	ADS125X_CMD_Send(ads, ADS125X_CMD_SELFCAL);
-	HAL_Delay(5);
+	HAL_Delay(50);
+	ADS125X_DRDY_Wait(ads);  // wait ADS1256 to settle after self calibration
+
 	// ADS1256_SendCmd(ADS1256_CMD_RDATAC);
-	ADS125X_CMD_Send(ads, ADS125X_CMD_RDATAC);
 
 	HAL_Delay(5);
 	ADS125X_CS(ads, 0);
@@ -168,7 +169,7 @@ float ADS125X_ADC_ReadVolt(ADS125X_t *ads) {
 	if (adsCode & 0x800000)
 		adsCode |= 0xff000000;  // fix 2's complement
 	// do all calculations in float. don't change the order of factors --> (adsCode/0x7fffff) will always return 0
-	return ((float) adsCode * (2.0f * ads->vref)) / (ads->pga * 8388607.0f); // 0x7fffff = 8388607.0f
+	return ((float) adsCode * (2.0f * ads->vref)) / (ads->pga * 8388607.0f); // 0x7fffff = 8388607.0f   //cancel float funsion cannt be faster
 }
 
 /**

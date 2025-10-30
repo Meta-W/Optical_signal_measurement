@@ -34,7 +34,6 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/wt/Documents/STM32_Proj/ads1256/Core/Src/dma.c" "CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Core/Src/dma.c.obj.d"
   "/home/wt/Documents/STM32_Proj/ads1256/Core/Src/gpio.c" "CMakeFiles/ads1256.elf.dir/Core/Src/gpio.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Core/Src/gpio.c.obj.d"
   "/home/wt/Documents/STM32_Proj/ads1256/Core/Src/main.c" "CMakeFiles/ads1256.elf.dir/Core/Src/main.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Core/Src/main.c.obj.d"
   "/home/wt/Documents/STM32_Proj/ads1256/Core/Src/spi.c" "CMakeFiles/ads1256.elf.dir/Core/Src/spi.c.obj" "gcc" "CMakeFiles/ads1256.elf.dir/Core/Src/spi.c.obj.d"

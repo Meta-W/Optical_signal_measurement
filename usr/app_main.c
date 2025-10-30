@@ -8,6 +8,9 @@
 #include "ads1256/ads125x.h"
 #include "../usr/KEY/key.h"
 #include "../usr/app_main.h"
+
+#include <sys/stat.h>
+
 #include "sdcard/sd_functions.h"
 #include "sdcard/sd_benchmark.h"
 #include "fatfs.h"
@@ -28,11 +31,12 @@ static uint8_t pul_index=0;
 
 uint32_t adc_index[6];
 
-enum {IDE,MEASURE,PRINT,STOP,ADC_TEST};
+enum {IDE,ADC_GET,MEASURE,PRINT,STOP,ADC_TEST};
 uint8_t ADS1256_RxBuf[3];      // 存储原始 24bit 数据
 int32_t ADS1256_RawData = 0;   // 转换后的有符号整数
 float ADS1256_Voltage = 0;     // 转换后的电压
-
+uint8_t adc_get_flag;
+uint8_t adc_get_ch=0;
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     if (GPIO_Pin == GPIO_PIN_0)
@@ -49,7 +53,7 @@ void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi)
 {
     if (hspi->Instance == SPI1)
     {
-        ADS1256_CS_HIGH();
+        // ADS1256_CS_HIGH();
 
         ADS1256_RawData = ((int32_t)ADS1256_RxBuf[0] << 16) |
                           ((int32_t)ADS1256_RxBuf[1] << 8)  |
@@ -62,6 +66,8 @@ void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi)
         ADS1256_Voltage = (float)ADS1256_RawData / 8388607.0f * 2.5f; // Vref=2.5V
 
         printf("ADC=%ld, V=%.6fV\r\n", ADS1256_RawData, ADS1256_Voltage);
+        HAL_SPI_Receive_IT(&hspi1, ADS1256_RxBuf, 3);
+
     }
 }
 ADS125X_t adc1;
@@ -72,7 +78,24 @@ uint8_t write_cnt =0;	//写SD卡次数
 uint8_t bufr[80];
 UINT br;
 
+void adc_init(void)
+{
+    HAL_TIM_Base_Start(&htim1);
+    adc1.csPort = ADS1256_CS_GPIO_Port;
+    adc1.csPin = ADS1256_CS_Pin;
+    adc1.drdyPort = ADS1256_DRDY_GPIO_Port;
+    adc1.drdyPin = ADS1256_DRDY_Pin;
+    adc1.rstPort = GPIOC;
+    adc1.rstPin = GPIO_PIN_13;
+    adc1.vref = 2.5f;
+    adc1.oscFreq = ADS125X_OSC_FREQ;
 
+    printf("\n");
+    printf("ADC config...\n");
+    //When we start the ADS1256, the preconfiguration already sets the MUX to [AIN0+AINCOM].
+    // 10 SPS / PGA=1 / buffer off
+    ADS125X_Init(&adc1, &hspi1, ADS125X_DRATE_7500SPS, ADS125X_PGA1, 0);
+}
 int ads_test(void)
 {
     HAL_TIM_Base_Start(&htim1);
@@ -89,16 +112,19 @@ int ads_test(void)
     printf("ADC config...\n");
     //When we start the ADS1256, the preconfiguration already sets the MUX to [AIN0+AINCOM].
     // 10 SPS / PGA=1 / buffer off
-    ADS125X_Init(&adc1, &hspi1, ADS125X_DRATE_30SPS, ADS125X_PGA1, 0);
+    ADS125X_Init(&adc1, &hspi1, ADS125X_DRATE_5SPS, ADS125X_PGA1, 0);
 
     printf("...done\n");
-    HAL_NVIC_SetPriority(EXTI0_IRQn,0,0);
-    HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+    ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
+	ADS125X_CMD_Send(&adc1, ADS125X_CMD_RDATAC);
+    // HAL_SPI_Receive_IT(&hspi1, ADS1256_RxBuf, 3);
+
+    // HAL_NVIC_SetPriority(EXTI0_IRQn,0,0);
+    // HAL_NVIC_EnableIRQ(EXTI0_IRQn);
     while (1) {
-        HAL_SPI_Receive_DMA(&hspi1, ADS1256_RxBuf, 3);
 
         //you can use this way
-        // float volt[2] = { 0.0f, 0.0f };
+        float volt[2] = { 0.0f, 0.0f };
         // ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
         // volt[0] = ADS125X_ADC_ReadVolt(&adc1);
         // printf("%.15f\n", volt[0]);
@@ -190,6 +216,9 @@ int sd_test(void)
 /**
  * @brief ???
  */
+float volt_buf[100];
+uint8_t volt_buf_index = 0;
+
 void app_main(void)
 {
     
@@ -212,9 +241,12 @@ void app_main(void)
 
     HAL_Delay(1000);
     // ADS1256_Init();
-    ads_test();
+    // ads_test();
+    adc_init();
     uint8_t state=IDE;
-    /* ??? */
+    float volt;
+    uint8_t adc_get_ch_last;
+    printf("enter while\n");
     while(1)
     {
 
@@ -229,8 +261,27 @@ void app_main(void)
                     key1_click=0;
                     state=MEASURE;
                 }
-
+                if (adc_get_flag)
+                {
+                    state=ADC_GET;
+                }
                 break;
+            case ADC_GET:
+            if (adc_get_ch!=adc_get_ch_last)
+            {
+                ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
+                adc_get_ch_last=adc_get_ch;
+            }
+            volt_buf[volt_buf_index++] = ADS125X_ADC_ReadVolt(&adc1);
+            // printf("Voltage: %lf\r\n", volt);
+            if (adc_get_flag==0)
+            {
+                state=IDE;
+                printf("index%d\n",volt_buf_index);
+                volt_buf_index = 0;
+
+            }
+            break;
             case MEASURE:
                 HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_1);
                 HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2);
@@ -358,6 +409,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         {
             HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13); /*??LED*/
             /*???????????1s*/
+        }else if (ms % 5 ==0)
+        {
+
+            adc_get_flag^=1;
+
+
         }
 
     }
