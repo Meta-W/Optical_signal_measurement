@@ -32,7 +32,7 @@ static uint8_t pul_index=0;
 
 uint32_t adc_index[6];
 
-enum {IDE,ADC_GET,MEASURE,PRINT,AD_PRINT,STOP,ADC_TEST};
+enum {IDE,ADC_GET,MEASURE,PRINT,AD_PRINT,WR_CSV,STOP,ADC_TEST};
 uint8_t ADS1256_RxBuf[3];      // 存储原始 24bit 数据
 int32_t ADS1256_RawData = 0;   // 转换后的有符号整数
 float ADS1256_Voltage = 0;     // 转换后的电压
@@ -211,9 +211,8 @@ void csv_init(void)
     // 打开 CSV 文件，若存在则覆盖
     res = f_open(&file, "0:/data.csv", FA_CREATE_ALWAYS | FA_WRITE);
     if (res != FR_OK) { printf("f_open failed: %d\r\n", res); return; }
-
     // 写入 CSV 表头
-    char header[] = "Time(ms),Temperature(C),Voltage(V)\r\n";
+    char header[] = "CH0,CH1,CH2,CH3,CH4,CH5,CH6\r\n";
     f_write(&file, header, strlen(header), &bw);
 
     // 写入多行数据
@@ -304,7 +303,7 @@ int32_t ADS1256_Filter_Update_Int(ADS_Filter_t *f, int32_t raw)
  * @param   sample_count  采样次数
  * @return  平均 ADC 值（浮点）
  */
-double ADS1256_AverageFromArray(int32_t *adc_array, uint8_t length)
+float ADS1256_AverageFromArray(int32_t *adc_array, uint8_t length)
 {
     if (adc_array == NULL || length == 0)
         return 0.0f;
@@ -322,14 +321,14 @@ double ADS1256_AverageFromArray(int32_t *adc_array, uint8_t length)
     {
         sum += adc_array[i];
     }
-    double avg_adc = (double)sum / (length);
+    float avg_adc = (float)sum / (length);
 
     // 转换为电压
-    double voltage = avg_adc * (2.0f * adc1.vref) / (8388607.0f * adc1.pga);
+    float voltage = avg_adc * (2.0f * adc1.vref) / (8388607.0f * adc1.pga);
 	// return ((float) adsCode * (2.0f * ads->vref)) / (ads->pga * 8388607.0f); // 0x7fffff = 8388607.0f   //cancel float funsion cannt be faster
     return voltage;
 }
-double ADS1256_AverageFloat(double *adc_array, uint8_t length)
+float ADS1256_AverageFloat(float *adc_array, uint8_t length)
 {
     if (adc_array == NULL || length == 0)
         return 0.0f;
@@ -359,11 +358,11 @@ typedef struct{
 typedef struct{
     uint8_t index;
     uint8_t channel;
-    double value[255];
+    float value[255];
 }AD_voltdata_t;
 typedef struct{
     uint8_t index;
-    double value[255];
+    float value[255];
 }AD_voltdata_op_t;
 
 AD_rawdata_t ad_rawdata;
@@ -372,6 +371,10 @@ AD_voltdata_t ad_voltdata;
 AD_voltdata_op_t ad_voltdata_out[6];
 uint8_t time_100ms_flag=0;
 uint8_t print_flag=0;
+
+float volt_a[10];
+uint8_t volt_a_index = 0;
+
 void app_main(void)
 {
     
@@ -391,12 +394,14 @@ void app_main(void)
     HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2);
 //    HAL_ADC_Start_IT(&hadc1);
     // sd_test();
+    sd_mount();
 
     HAL_Delay(1000);
     // ads_test();
     // ads_test();0x3fc-2.5
     adc_init();
     uint8_t state=IDE;
+    uint8_t open_csv=0;
 
     uint8_t adc_get_ch_last;
     ad_rawdata.index = 0;
@@ -407,10 +412,13 @@ void app_main(void)
     ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
 
     printf("enter while\n");
-    __volatile__ double volt_avg;
-    __volatile__ float volt;
+    __volatile__ float volt_avg;
+
     uint8_t vofa_wave_index = 0;
+    uint8_t wr_csv_flag = 0;
     ADS_Filter_t f;
+    __volatile float volt[7];
+    char line[64];
 
     while(1)
     {
@@ -425,28 +433,41 @@ void app_main(void)
                 if (key1_click==1)
                 {
                     key1_click=0;
+                    f_close(&file);
+
+                    sd_unmount();
                     state=MEASURE;
                 }
                 if (key2_click==1)
                 {
                     key2_click=0;
-                    vofa_sel_ch++;
-                    if (vofa_sel_ch==6)
-                        vofa_sel_ch=0;
+                    if (wr_csv_flag==1)
+                        wr_csv_flag=0;
+                    wr_csv_flag=1;
                 }
                 if (ADC_Switch)
                 {
                     state=ADC_GET;
                 }
-                if (time_100ms_flag&0)
+                if (time_100ms_flag)
                 {
-                    time_100ms_flag=0;
-                    if (ad_voltdata.index>0)
+                    for (uint8_t i = 0; i < 6; i++)
                     {
-                        state=AD_PRINT;
-                        // printf("i%d,av%lf\n",ad_voltdata.index);
+                        if (ad_voltdata_out[i].index==0)
+                        {
+                            break;
+                        }
 
                     }
+                    for (uint8_t i = 0; i < 6; i++)
+                    {
+                        volt[i]=ADS1256_AverageFloat(ad_voltdata_out[i].value, ad_voltdata_out[i].index);
+                        ad_voltdata_out[i].index=0;
+                    }
+                    if (wr_csv_flag)
+                        state=WR_CSV;
+
+                    time_100ms_flag=0;
 
                 }
                 break;
@@ -478,14 +499,15 @@ void app_main(void)
                         // ad_voltdata.value[ad_voltdata.index++] = volt_avg;
                         // ad_voltdata.channel = ad_rawdata.channel;
 
-                        // ad_voltdata_out[ad_rawdata.channel].value[ad_voltdata_out[ad_rawdata.channel].index++] = volt_avg;
-                    // printf("i%d,v%lf\n",ad_rawdata.channel,volt_avg);
-                        printf("%lf",volt_avg);
-                        if (ad_rawdata.channel==6)
-                            printf("\n");
-                        else
-                            printf(",");
+                        ad_voltdata_out[ad_rawdata.channel].value[ad_voltdata_out[ad_rawdata.channel].index++] = volt_avg;
+                        // printf("i%d,v%.3f\n",ad_rawdata.channel,volt_avg);
 
+                        // printf("%lf",volt_avg);
+                        // if (ad_rawdata.channel==6)
+                        //
+                        //     printf("\n");
+                        // else
+                        //     printf(",");
 // #define VOFA
 #ifdef VOFA
                         if (vofa_wave_index==ad_rawdata.channel)
@@ -533,29 +555,47 @@ void app_main(void)
                 state = STOP;
                 break;
             case AD_PRINT:
-                __volatile double volt[7];
-                volt[0]=ADS1256_AverageFloat(ad_voltdata_out[0].value, ad_voltdata_out[0].index);
-                volt[1]=ADS1256_AverageFloat(ad_voltdata_out[1].value, ad_voltdata_out[1].index);
-                volt[2]=ADS1256_AverageFloat(ad_voltdata_out[2].value, ad_voltdata_out[2].index);
-                volt[3]=ADS1256_AverageFloat(ad_voltdata_out[3].value, ad_voltdata_out[3].index);
-                volt[4]=ADS1256_AverageFloat(ad_voltdata_out[4].value, ad_voltdata_out[4].index);
-                volt[5]=ADS1256_AverageFloat(ad_voltdata_out[5].value, ad_voltdata_out[5].index);
-                volt[6]=ADS1256_AverageFloat(ad_voltdata_out[6].value, ad_voltdata_out[6].index);
+//
                 // printf("i%d,av%lf\n",ad_voltdata.index,volt);
-                // printf("av:%lf\n",volt);
-                for(uint8_t i=0;i<7;i++)
-                {
-                    printf("%lf",volt[i]);
-                    ad_voltdata_out[i].index=0;
-                    if (i<6)
-                        printf(",");
-                    else
-                        printf("\n");
-                }
+                // printf("av:%lf\n",volt[4]);
+                // for(uint8_t i=0;i<6;i++)
+                // {
+                //
+                //     printf("%.3f",volt[i]);
+                //     ad_voltdata_out[i].index=0;
+                //     if (i<6)
+                //         printf(",");
+                //     else
+                //         printf("\n");
+                // }
                 ad_voltdata.index = 0;
 
                 state = IDE;
                 break;
+            case WR_CSV:
+                 if (open_csv==0)
+                 {
+                     open_csv=1;
+                     // 打开 CSV 文件，若存在则覆盖
+                     res = f_open(&file, "0:/data.csv", FA_CREATE_ALWAYS | FA_WRITE);
+                     if (res != FR_OK) { printf("f_open failed: %d\r\n", res); return; }
+                     else printf("f_open success\n");
+                     // 写入 CSV 表头
+                     char header[] = "CH0,CH1,CH2,CH3,CH4,CH5,CH6\r\n";
+                     f_write(&file, header, strlen(header), &bw);
+                 }
+                // 写入多行数据
+
+
+            // 格式化成 CSV 行
+            sprintf(line, "%lf,%lf,%lf,%lf,%lf,%lf\r\n", volt[0], volt[1], volt[2],volt[3],volt[4],volt[5]);
+            // 写入文件
+            f_write(&file, line, strlen(line), &bw);
+                // 关闭文件
+            // printf("Cf!\r\n");
+            state = IDE;
+
+            break;
             case STOP:
             printf("ic stop\n");
                 HAL_TIM_IC_Stop_IT(&htim2,TIM_CHANNEL_1);
@@ -666,7 +706,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         {
             adc_get_flag^=1;
         }
-        else if (ms % 201==0)
+        else if (ms % 101==0)
         {
 
             time_100ms_flag=1;
