@@ -144,6 +144,7 @@ uint8_t ADS125X_Init(ADS125X_t *ads, SPI_HandleTypeDef *hspi, uint8_t drate, uin
 uint8_t ADS125X_Register_Read(ADS125X_t *ads, uint8_t reg, uint8_t *pData, uint8_t n);
 uint8_t ADS125X_Register_Write(ADS125X_t *ads, uint8_t reg, uint8_t data);
 uint8_t ADS125X_CMD_Send(ADS125X_t *ads, uint8_t cmd);
+	int32_t ADS125X_ADC_ReadRaw(ADS125X_t *ads);
 
 void ADS125X_ADC_Code2Volt(ADS125X_t *ads, int32_t *pCode, float *pVolt, uint16_t size);
 float ADS125X_ADC_ReadVolt(ADS125X_t *ads);
@@ -152,6 +153,5 @@ void ADS125X_Channel_Set(ADS125X_t *ads, int8_t chan);
 uint8_t ADS125X_ChannelDiff_Set(ADS125X_t *ads, int8_t p_chan, int8_t n_chan);
 
 void ADS125X_cycle_Through_Channels(ADS125X_t *ads, float *pVolt);
-
 #endif	/* ADS1255_H */
 

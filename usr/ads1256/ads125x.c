@@ -171,7 +171,25 @@ float ADS125X_ADC_ReadVolt(ADS125X_t *ads) {
 	// do all calculations in float. don't change the order of factors --> (adsCode/0x7fffff) will always return 0
 	return ((float) adsCode * (2.0f * ads->vref)) / (ads->pga * 8388607.0f); // 0x7fffff = 8388607.0f   //cancel float funsion cannt be faster
 }
+int32_t ADS125X_ADC_ReadRaw(ADS125X_t *ads) {
+	uint8_t spiRx[3] = { 0, 0, 0 };
+	spiRx[0] = ADS125X_CMD_RDATA;
 
+	ADS125X_DRDY_Wait(ads);
+	ADS125X_CS(ads, 1);
+	HAL_SPI_Transmit(ads->hspix, spiRx, 1, 10);
+	delay_us(10); 	//t6 time 7us
+	HAL_SPI_Receive(ads->hspix, spiRx, 3, 10);
+	ADS125X_CS(ads, 0);
+
+#ifdef DEBUG_ADS1255
+	printf("RDATA: %#.2x%.2x%.2x\n", spiRx[0], spiRx[1], spiRx[2]);
+#endif
+
+	// must be signed integer for 2's complement to work
+	int32_t adsCode = (spiRx[0] << 16) | (spiRx[1] << 8) | (spiRx[2]);
+	return  adsCode;
+}
 /**
  * @brief  reads from internal registers
  * @param  *ads pointer to ads handle

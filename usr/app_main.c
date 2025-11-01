@@ -26,17 +26,28 @@ uint16_t ADC_Switch=0;
 static uint8_t key_0;
 static uint8_t key_1;
 static uint8_t key1_click;
-uint16_t pulse_width[30];
+uint16_t pulse_width_arr[30];
 static uint8_t pul_index=0;
 
 uint32_t adc_index[6];
 
-enum {IDE,ADC_GET,MEASURE,PRINT,STOP,ADC_TEST};
+enum {IDE,ADC_GET,MEASURE,PRINT,AD_PRINT,STOP,ADC_TEST};
 uint8_t ADS1256_RxBuf[3];      // 存储原始 24bit 数据
 int32_t ADS1256_RawData = 0;   // 转换后的有符号整数
 float ADS1256_Voltage = 0;     // 转换后的电压
 uint8_t adc_get_flag;
 uint8_t adc_get_ch=0;
+//fliter
+typedef struct {
+    int32_t last_raw;   // 上次原始值
+    int32_t filtered;     // 滤波输出（浮点或整形均可）
+    uint8_t init_flag;  // 是否初始化过
+} ADS_Filter_t;
+
+#define SPIKE_THRESHOLD   10000     // 尖峰检测阈值，具体看你的信号幅度
+#define ALPHA             0.1f      // EMA 平滑系数 (0~1)，越大越灵敏
+
+
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     if (GPIO_Pin == GPIO_PIN_0)
@@ -105,7 +116,7 @@ int ads_test(void)
     adc1.drdyPin = ADS1256_DRDY_Pin;
     adc1.rstPort = GPIOC;
     adc1.rstPin = GPIO_PIN_13;
-    adc1.vref = 2.5f;
+    adc1.vref = 2.499505f;
     adc1.oscFreq = ADS125X_OSC_FREQ;
 
     printf("\n");
@@ -116,7 +127,9 @@ int ads_test(void)
 
     printf("...done\n");
     ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
-	ADS125X_CMD_Send(&adc1, ADS125X_CMD_RDATAC);
+    ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
+    ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
+	// ADS125X_CMD_Send(&adc1, ADS125X_CMD_RDATAC);
     // HAL_SPI_Receive_IT(&hspi1, ADS1256_RxBuf, 3);
 
     // HAL_NVIC_SetPriority(EXTI0_IRQn,0,0);
@@ -125,9 +138,9 @@ int ads_test(void)
 
         //you can use this way
         float volt[2] = { 0.0f, 0.0f };
-        // ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
-        // volt[0] = ADS125X_ADC_ReadVolt(&adc1);
-        // printf("%.15f\n", volt[0]);
+        ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
+        volt[0] = ADS125X_ADC_ReadVolt(&adc1);
+        printf("%.15f\n", volt[0]);
 
         // ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN1);
         // ADS125X_ChannelDiff_Set(&adc1, ADS125X_MUXP_AIN0, ADS125X_MUXN_AIN1);
@@ -139,7 +152,7 @@ int ads_test(void)
     //  ADS125X_DRDY_Wait(&adc1);
     //  ADS125X_cycle_Through_Channels(&adc1, volt)
 
-        HAL_Delay(100);
+        // HAL_Delay(100);
         /* USER CODE END WHILE */
 
         /* USER CODE BEGIN 3 */
@@ -184,7 +197,36 @@ void write_csv_example(void)
     f_close(&file);
     printf("CSV write finished!\r\n");
 }
+void csv_init(void)
+{
 
+    // 打开 CSV 文件，若存在则覆盖
+    res = f_open(&file, "0:/data.csv", FA_CREATE_ALWAYS | FA_WRITE);
+    if (res != FR_OK) { printf("f_open failed: %d\r\n", res); return; }
+
+    // 写入 CSV 表头
+    char header[] = "Time(ms),Temperature(C),Voltage(V)\r\n";
+    f_write(&file, header, strlen(header), &bw);
+
+    // 写入多行数据
+    for (int i = 0; i < 10; i++)
+    {
+        char line[64];
+        int time_ms = i*100;
+        float temp = 25.0 + i*0.5;
+        float volt = 3.3 - i*0.05;
+
+        // 格式化成 CSV 行
+        sprintf(line, "%d,%.2f,%.2f\r\n", time_ms, temp, volt);
+
+        // 写入文件
+        f_write(&file, line, strlen(line), &bw);
+    }
+
+    // 关闭文件
+    f_close(&file);
+    printf("CSV write finished!\r\n");
+}
 int sd_test(void)
 {
     // memset(&disk, 0, sizeof(disk));
@@ -208,17 +250,100 @@ int sd_test(void)
     // sd_unmount();
     while (1) ;
 }
-    //
-    // sd_mount();
-    // sd_read_file("0:/F1/F1F2/File5.TXT", bufr, 50, &br);
-    // printf("DATA from File:::: %s\n\n",bufr);
-    // sd_unmount();}
+
+typedef struct {
+    uint16_t value;
+    int index;
+} MinResult;
+
+MinResult find_min(uint16_t *arr, int len) {
+    MinResult result = {arr[0], 0};
+
+    for (int i = 1; i < len; i++) {
+        if (arr[i] < result.value) {
+            result.value = arr[i];
+            result.index = i;
+        }
+    }
+
+    return result;
+}
+
+int32_t ADS1256_Filter_Update_Int(ADS_Filter_t *f, int32_t raw)
+{
+    if (!f->init_flag) {
+        f->filtered = raw;
+        f->last_raw = raw;
+        f->init_flag = 1;
+        return (int32_t)f->filtered;
+    }
+
+    int32_t diff = abs(raw - f->last_raw);
+    if (diff > SPIKE_THRESHOLD)
+        raw = f->last_raw;
+
+    // 定点低通滤波：ALPHA = 1/8
+    f->filtered = f->filtered + ((raw - f->filtered) >> 3);
+    f->last_raw = raw;
+    return (int32_t)f->filtered;
+}
+
 /**
- * @brief ???
+ * @brief   从 ADS1256 读取 N 次 ADC，并求平均
+ * @param   sample_count  采样次数
+ * @return  平均 ADC 值（浮点）
  */
+double ADS1256_AverageFromArray(int32_t *adc_array, uint8_t length)
+{
+    if (adc_array == NULL || length == 0)
+        return 0.0f;
+
+    int64_t sum = 0;
+    for (uint8_t i = 0; i < length; i++)
+    {
+        sum += adc_array[i];
+    }
+
+    double avg_adc = (float)sum / length;
+
+    // 转换为电压
+    double voltage = avg_adc * (2.0f * adc1.vref) / (8388607.0f * adc1.pga);
+	// return ((float) adsCode * (2.0f * ads->vref)) / (ads->pga * 8388607.0f); // 0x7fffff = 8388607.0f   //cancel float funsion cannt be faster
+
+    return voltage;
+}
+double ADS1256_AverageFloat(double *adc_array, uint8_t length)
+{
+    if (adc_array == NULL || length == 0)
+        return 0.0f;
+
+    double sum = 0;
+    for (uint8_t i = 0; i < length; i++)
+    {
+        sum += adc_array[i];
+    }
+
+    double avg_volt = (double)sum / length;
+
+    return avg_volt;
+}
 float volt_buf[100];
 uint8_t volt_buf_index = 0;
+typedef struct{
+    uint8_t index;
+    uint8_t channel;
+    uint32_t value[100];
+}AD_rawdata_t;
 
+typedef struct{
+    uint8_t index;
+    uint8_t channel;
+    double value[255];
+}AD_voltdata_t;
+AD_rawdata_t ad_rawdata;
+AD_voltdata_t ad_voltdata;
+uint8_t time_100ms_flag=0;
+uint8_t print_flag=0;
 void app_main(void)
 {
     
@@ -234,25 +359,34 @@ void app_main(void)
     HAL_TIM_Base_Start(&htim3);
     HAL_GPIO_WritePin(ADS1256_CS_GPIO_Port,ADS1256_CS_Pin,0);
 //    HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
-//    HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_1);
-//    HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2);
+    HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_1);
+    HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2);
 //    HAL_ADC_Start_IT(&hadc1);
     // sd_test();
 
     HAL_Delay(1000);
-    // ADS1256_Init();
     // ads_test();
+    // ads_test();0x3fc-2.5
     adc_init();
     uint8_t state=IDE;
-    float volt;
+
     uint8_t adc_get_ch_last;
+    ad_rawdata.index = 0;
+    ad_rawdata.channel = 0;
+                ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
+                ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
+                ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
+
     printf("enter while\n");
+    __volatile__ double volt_avg;
+    uint8_t vofa_wave_index = 0;
     while(1)
     {
 
         uint8_t data_high;
         uint8_t data_low;
         uint8_t data_print[20];
+
         switch (state) {
             case IDE:
 
@@ -261,58 +395,103 @@ void app_main(void)
                     key1_click=0;
                     state=MEASURE;
                 }
-                if (adc_get_flag)
+                if (ADC_Switch)
                 {
                     state=ADC_GET;
                 }
+                if (time_100ms_flag&0)
+                {
+                    time_100ms_flag=0;
+                    if (ad_voltdata.index>0)
+                    {
+                        state=AD_PRINT;
+                        // printf("i%d,av%lf\n",ad_voltdata.index);
+
+                    }
+
+                }
                 break;
             case ADC_GET:
-            if (adc_get_ch!=adc_get_ch_last)
-            {
-                ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
-                adc_get_ch_last=adc_get_ch;
-            }
-            volt_buf[volt_buf_index++] = ADS125X_ADC_ReadVolt(&adc1);
-            // printf("Voltage: %lf\r\n", volt);
-            if (adc_get_flag==0)
-            {
-                state=IDE;
-                printf("i%d\n",volt_buf_index);
+                {
+                    ADS_Filter_t f;
 
-                volt_buf_index = 0;
+                    if (adc_get_ch!=adc_get_ch_last)
+                    {
+                        ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
+                        adc_get_ch_last=adc_get_ch;
+                    }
+                    ad_rawdata.value[ad_rawdata.index++] =  ADS1256_Filter_Update_Int(&f,ADS125X_ADC_ReadRaw(&adc1));
+                    // printf("Voltage: %lf\r\n", volt);
+                    if (ADC_Switch==0)
+                    {
+                        volt_avg=0;
+                        volt_avg = ADS1256_AverageFromArray(ad_rawdata.value, ad_rawdata.index);
+                        ad_voltdata.value[ad_voltdata.index++] = volt_avg;
+                        ad_voltdata.channel = ad_rawdata.channel;
+                        // printf("i%d,v%lf\n",ad_rawdata.channel,volt_avg);
+                        // printf("%lf,\n",ad_rawdata.channel,volt_avg);
+// #define VOFA
+#ifdef VOFA
+                        if (vofa_wave_index==ad_rawdata.channel)
+                        {
+                            printf("%lf",ad_rawdata.channel,volt_avg);
+                            vofa_wave_index++;
+                            if (vofa_wave_index==7)
+                            {
+                                vofa_wave_index=0;
+                                printf("\n");
+                            }
+                            else
+                                printf(",");
+                        }
+#else
+                        printf("i%d,v%lf\n",ad_rawdata.channel,volt_avg);
+#endif
 
-            }
-            break;
+                        // HAL_Delay(1);
+                        ad_rawdata.index = 0;
+                        state=IDE;
+
+                    }
+                    break;
+                }
             case MEASURE:
                 HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_1);
                 HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2);
-                if(pul_index%30==0)
+                if(print_flag)
+                {
                     state=PRINT;
+                    // HAL_Delay(100);
+                }
                 break;
-//                HAL_Delay(1000);
             case PRINT:
-
+                print_flag=0;
                 for(uint8_t i=0;i<30;i++)
                 {
 
-                    data_high = pulse_width[i]>>8;
-                    data_low = pulse_width[i]&0x00ff;
-                    sprintf(data_print,"%d:%d\r\n",i,pulse_width[i]);
+                    sprintf(data_print,"%d:%d\r\n",i,pulse_width_arr[i]);
                     HAL_UART_Transmit(&huart1,data_print,sizeof(data_print),100);
 //                    HAL_UART_Transmit(&huart1,data_low,1,100);
 
                 }
                 state = STOP;
                 break;
+            case AD_PRINT:
+                __volatile double volt;
+                volt=ADS1256_AverageFloat(ad_voltdata.value, ad_voltdata.index);
+                printf("i%d,av%lf\n",ad_voltdata.index,volt);
+                ad_voltdata.index = 0;
+
+                state = IDE;
+                break;
             case STOP:
+            printf("ic stop\n");
                 HAL_TIM_IC_Stop_IT(&htim2,TIM_CHANNEL_1);
                 HAL_TIM_IC_Stop_IT(&htim2,TIM_CHANNEL_2);
                 state = ADC_TEST;
                 break;
             case ADC_TEST:
-                for (uint8_t i=0 ;i<6;i++){
-                    printf("%d,%d\r\n",i,adc_index[i]);
-                }
+
                 state = IDE;
 
                 break;
@@ -320,7 +499,6 @@ void app_main(void)
                 break;
 
         }
-
         // // ????0: AIN0 - AIN1
         // a = POSITIVE_AIN0 + NEGTIVE_AIN1;
         // Write_Reg_Mux(a);
@@ -412,65 +590,57 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
             /*???????????1s*/
         }else if (ms % 5 ==0)
         {
-
             adc_get_flag^=1;
+        }
+        else if (ms % 101==0)
+        {
 
-
+            time_100ms_flag=1;
         }
 
     }
 }
-/**
- * @brief GPIO????????
- * @param GPIO_Pin ???????
- */
-// void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-// {
-//     if(GPIO_Pin == GPIO_PIN_0)
-//     {
-//         // ????DRDY????
-//         GPIO_PinState pin_state = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0);
-//
-//         if(pin_state == GPIO_PIN_RESET)
-//         {
-//             // ???????????????
-//             HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_8);
-//             // ????????????????
-//             // ???????????????????
-//         }
-//         else
-//         {
-//             // ???????????????
-//             HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_8);
-//
-//             // ??????????????
-//         }
-//     }
-// }
+
 uint32_t adc_index_value=0;
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
 
     static uint16_t t = 0;
+    static uint16_t last_pulse_width = 0;
+    static uint16_t pulse_width = 0;
     static uint16_t d = 0;
-    static uint8_t adc_index_index=0;
+    static uint16_t cnt = 0;
+    int16_t tmp = 0;
+    uint16_t tmp1 = 0;
+    static MinResult min ;
     if(htim->Instance == TIM2)
     {
 
         if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)
         {
-//            LEDDT[0]=1;
+            if (cnt<100)
+                cnt++;
             t = HAL_TIM_ReadCapturedValue(htim,TIM_CHANNEL_1)+1;
-//            HAL_UART_Transmit(&huart1,(uint8_t *)&d,2,100);
-            pulse_width[pul_index%30]=t-d;
-            pul_index++;
-//            freq = 1000000 / t;
-//            duty = (float)d/t*100;
-//            HAL_ADC_Stop_IT(&hadc1);
-            ADC_Switch=0;
+            pulse_width=t-d;
+            pulse_width_arr[pul_index++]=pulse_width;
+            if (pul_index==30)pul_index=0;
 
-            adc_index[adc_index_index++]=adc_index_value;
-            adc_index_value=0;
+            tmp =((last_pulse_width-pulse_width))*100/last_pulse_width;
+            if (tmp>40)
+            {
+                // printf("%d\n",tmp);
+                // printf("%d,%d\n",last_pulse_width,pulse_width);
+                pul_index=0;
+            }
+            if (pul_index==6)
+                print_flag=1;
+
+            last_pulse_width = pulse_width;
+            //open adc sample
+            if (cnt==100)
+                ADC_Switch=0;
+            ad_rawdata.channel=pul_index;
+
         }
 
         else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2)
@@ -479,7 +649,8 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
             d =  HAL_TIM_ReadCapturedValue(htim,TIM_CHANNEL_2)+1;
 //            HAL_ADC_Start_IT(&hadc1);
 //            HAL_TIM_Base_Start_IT(&htim11);
-            ADC_Switch=1;
+            if (cnt==100)
+                ADC_Switch=1;
 
 //            HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_8);
 //            HAL_UART_Transmit(&huart1,(uint8_t *)&d,2,100);
