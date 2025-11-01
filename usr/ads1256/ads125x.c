@@ -1,6 +1,8 @@
 #include <stdint.h>
 #include "ads125x.h"
 
+#include <stdio.h>
+
 #include "main.h"
 
 // #define DEBUG_ADS1255
@@ -63,7 +65,15 @@ uint8_t ADS125X_Init(ADS125X_t *ads, SPI_HandleTypeDef *hspi, uint8_t drate,
 	ADS125X_Register_Read(ads, ADS125X_REG_STATUS, tmp, 1);
 	printf("STATUS: %#.2x\n", tmp[0]);
 #endif
+	ADS125X_Register_Read(ads, ADS125X_REG_STATUS, tmp, 1);
+	printf("STATUS: %#.2x\n", tmp[0]);
 
+	if (!(tmp[0]>>4&0x03))
+	{
+		printf("STATUS: %#.2x\n", tmp[0]);
+		return 1;
+
+	}
 	// enable clockout | ADS125X_PGA1
 	ADS125X_Register_Write(ads, ADS125X_REG_ADCON, ADS125X_CLKOUT_OFF | gain); // enable clockout = clkin/1
 #ifdef DEBUG_ADS1255
@@ -188,6 +198,7 @@ int32_t ADS125X_ADC_ReadRaw(ADS125X_t *ads) {
 
 	// must be signed integer for 2's complement to work
 	int32_t adsCode = (spiRx[0] << 16) | (spiRx[1] << 8) | (spiRx[2]);
+	// printf("%d\n", adsCode);
 	return  adsCode;
 }
 /**

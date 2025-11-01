@@ -26,6 +26,7 @@ uint16_t ADC_Switch=0;
 static uint8_t key_0;
 static uint8_t key_1;
 static uint8_t key1_click;
+static uint8_t key2_click;
 uint16_t pulse_width_arr[30];
 static uint8_t pul_index=0;
 
@@ -44,8 +45,8 @@ typedef struct {
     uint8_t init_flag;  // 是否初始化过
 } ADS_Filter_t;
 
-#define SPIKE_THRESHOLD   10000     // 尖峰检测阈值，具体看你的信号幅度
-#define ALPHA             0.1f      // EMA 平滑系数 (0~1)，越大越灵敏
+#define SPIKE_THRESHOLD   100000     // 尖峰检测阈值，具体看你的信号幅度
+#define ALPHA             0.01f      // EMA 平滑系数 (0~1)，越大越灵敏
 
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
@@ -91,6 +92,7 @@ UINT br;
 
 void adc_init(void)
 {
+    uint8_t ret;
     HAL_TIM_Base_Start(&htim1);
     adc1.csPort = ADS1256_CS_GPIO_Port;
     adc1.csPin = ADS1256_CS_Pin;
@@ -105,7 +107,13 @@ void adc_init(void)
     printf("ADC config...\n");
     //When we start the ADS1256, the preconfiguration already sets the MUX to [AIN0+AINCOM].
     // 10 SPS / PGA=1 / buffer off
-    ADS125X_Init(&adc1, &hspi1, ADS125X_DRATE_7500SPS, ADS125X_PGA1, 0);
+    do
+    {
+    ret = ADS125X_Init(&adc1, &hspi1, ADS125X_DRATE_7500SPS, ADS125X_PGA1, 0);
+
+    }
+    while (ret != 0);
+
 }
 int ads_test(void)
 {
@@ -123,7 +131,7 @@ int ads_test(void)
     printf("ADC config...\n");
     //When we start the ADS1256, the preconfiguration already sets the MUX to [AIN0+AINCOM].
     // 10 SPS / PGA=1 / buffer off
-    ADS125X_Init(&adc1, &hspi1, ADS125X_DRATE_5SPS, ADS125X_PGA1, 0);
+    ADS125X_Init(&adc1, &hspi1, ADS125X_DRATE_7500SPS, ADS125X_PGA1, 0);
 
     printf("...done\n");
     ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
@@ -279,11 +287,14 @@ int32_t ADS1256_Filter_Update_Int(ADS_Filter_t *f, int32_t raw)
     }
 
     int32_t diff = abs(raw - f->last_raw);
+    // printf("d%d\n",diff);
     if (diff > SPIKE_THRESHOLD)
         raw = f->last_raw;
 
     // 定点低通滤波：ALPHA = 1/8
-    f->filtered = f->filtered + ((raw - f->filtered) >> 3);
+    // f->filtered = f->filtered + ((raw - f->filtered) >> 4);
+
+    f->filtered = raw;
     f->last_raw = raw;
     return (int32_t)f->filtered;
 }
@@ -299,17 +310,23 @@ double ADS1256_AverageFromArray(int32_t *adc_array, uint8_t length)
         return 0.0f;
 
     int64_t sum = 0;
+    // for (uint8_t i = 0; i < length/4; i++)
+    // {
+    //     sum += adc_array[i+length/2];
+    // }
+    // for (uint8_t i = 0; i < length/4; i--)
+    // {
+    //     sum += adc_array[i+length/2];
+    // }
     for (uint8_t i = 0; i < length; i++)
     {
         sum += adc_array[i];
     }
-
-    double avg_adc = (float)sum / length;
+    double avg_adc = (double)sum / (length);
 
     // 转换为电压
     double voltage = avg_adc * (2.0f * adc1.vref) / (8388607.0f * adc1.pga);
 	// return ((float) adsCode * (2.0f * ads->vref)) / (ads->pga * 8388607.0f); // 0x7fffff = 8388607.0f   //cancel float funsion cannt be faster
-
     return voltage;
 }
 double ADS1256_AverageFloat(double *adc_array, uint8_t length)
@@ -317,13 +334,13 @@ double ADS1256_AverageFloat(double *adc_array, uint8_t length)
     if (adc_array == NULL || length == 0)
         return 0.0f;
 
-    double sum = 0;
+    float sum = 0;
     for (uint8_t i = 0; i < length; i++)
     {
         sum += adc_array[i];
     }
 
-    double avg_volt = (double)sum / length;
+    float avg_volt = (float)sum / length;
 
     return avg_volt;
 }
@@ -332,16 +349,27 @@ uint8_t volt_buf_index = 0;
 typedef struct{
     uint8_t index;
     uint8_t channel;
-    uint32_t value[100];
+    int32_t value[100];
 }AD_rawdata_t;
-
+typedef struct{
+    uint8_t index;
+    uint8_t channel;
+    double value[100];
+}AD_rawdata_f_t;
 typedef struct{
     uint8_t index;
     uint8_t channel;
     double value[255];
 }AD_voltdata_t;
+typedef struct{
+    uint8_t index;
+    double value[255];
+}AD_voltdata_op_t;
+
 AD_rawdata_t ad_rawdata;
+AD_rawdata_f_t ad_rawdata_f;
 AD_voltdata_t ad_voltdata;
+AD_voltdata_op_t ad_voltdata_out[6];
 uint8_t time_100ms_flag=0;
 uint8_t print_flag=0;
 void app_main(void)
@@ -373,13 +401,17 @@ void app_main(void)
     uint8_t adc_get_ch_last;
     ad_rawdata.index = 0;
     ad_rawdata.channel = 0;
-                ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
-                ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
-                ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
+    uint8_t vofa_sel_ch=0;
+    ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
+    ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
+    ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
 
     printf("enter while\n");
     __volatile__ double volt_avg;
+    __volatile__ float volt;
     uint8_t vofa_wave_index = 0;
+    ADS_Filter_t f;
+
     while(1)
     {
 
@@ -394,6 +426,13 @@ void app_main(void)
                 {
                     key1_click=0;
                     state=MEASURE;
+                }
+                if (key2_click==1)
+                {
+                    key2_click=0;
+                    vofa_sel_ch++;
+                    if (vofa_sel_ch==6)
+                        vofa_sel_ch=0;
                 }
                 if (ADC_Switch)
                 {
@@ -413,23 +452,40 @@ void app_main(void)
                 break;
             case ADC_GET:
                 {
-                    ADS_Filter_t f;
-
+                    f.init_flag=0;
                     if (adc_get_ch!=adc_get_ch_last)
                     {
                         ADS125X_Channel_Set(&adc1, ADS125X_MUXP_AIN0);
                         adc_get_ch_last=adc_get_ch;
                     }
+                    // volt = ADS125X_ADC_ReadVolt(&adc1);
+                    // ad_rawdata_f.value[ad_rawdata.index++] =  volt;
+
                     ad_rawdata.value[ad_rawdata.index++] =  ADS1256_Filter_Update_Int(&f,ADS125X_ADC_ReadRaw(&adc1));
+                    // printf("%d\n",ad_rawdata.value[ad_rawdata.index]);
+                    // ad_rawdata.value[ad_rawdata.index++] = ADS125X_ADC_ReadRaw(&adc1);
                     // printf("Voltage: %lf\r\n", volt);
+                    // printf("%d\n",ad_rawdata.value[ad_rawdata.index]);
+                    // if (ad_rawdata.channel==5)
+                    //     printf("\n");
+                    // else
+                    //     printf(",");
                     if (ADC_Switch==0)
                     {
                         volt_avg=0;
+                        // volt_avg = ADS1256_AverageFloat(ad_rawdata_f.value, ad_rawdata.index);
                         volt_avg = ADS1256_AverageFromArray(ad_rawdata.value, ad_rawdata.index);
-                        ad_voltdata.value[ad_voltdata.index++] = volt_avg;
-                        ad_voltdata.channel = ad_rawdata.channel;
-                        // printf("i%d,v%lf\n",ad_rawdata.channel,volt_avg);
-                        // printf("%lf,\n",ad_rawdata.channel,volt_avg);
+                        // ad_voltdata.value[ad_voltdata.index++] = volt_avg;
+                        // ad_voltdata.channel = ad_rawdata.channel;
+
+                        // ad_voltdata_out[ad_rawdata.channel].value[ad_voltdata_out[ad_rawdata.channel].index++] = volt_avg;
+                    // printf("i%d,v%lf\n",ad_rawdata.channel,volt_avg);
+                        printf("%lf",volt_avg);
+                        if (ad_rawdata.channel==6)
+                            printf("\n");
+                        else
+                            printf(",");
+
 // #define VOFA
 #ifdef VOFA
                         if (vofa_wave_index==ad_rawdata.channel)
@@ -445,7 +501,8 @@ void app_main(void)
                                 printf(",");
                         }
 #else
-                        printf("i%d,v%lf\n",ad_rawdata.channel,volt_avg);
+                        // printf("i%d,v%lf\n",ad_rawdata.channel,volt_avg);
+                        // printf("i%d,v%lf\n",ad_rawdata.index,volt_avg);
 #endif
 
                         // HAL_Delay(1);
@@ -466,20 +523,35 @@ void app_main(void)
                 break;
             case PRINT:
                 print_flag=0;
-                for(uint8_t i=0;i<30;i++)
+                for(uint8_t i=0;i<7;i++)
                 {
+                    printf("%d:%d\n",i,pulse_width_arr[i]);
 
-                    sprintf(data_print,"%d:%d\r\n",i,pulse_width_arr[i]);
-                    HAL_UART_Transmit(&huart1,data_print,sizeof(data_print),100);
 //                    HAL_UART_Transmit(&huart1,data_low,1,100);
 
                 }
                 state = STOP;
                 break;
             case AD_PRINT:
-                __volatile double volt;
-                volt=ADS1256_AverageFloat(ad_voltdata.value, ad_voltdata.index);
-                printf("i%d,av%lf\n",ad_voltdata.index,volt);
+                __volatile double volt[7];
+                volt[0]=ADS1256_AverageFloat(ad_voltdata_out[0].value, ad_voltdata_out[0].index);
+                volt[1]=ADS1256_AverageFloat(ad_voltdata_out[1].value, ad_voltdata_out[1].index);
+                volt[2]=ADS1256_AverageFloat(ad_voltdata_out[2].value, ad_voltdata_out[2].index);
+                volt[3]=ADS1256_AverageFloat(ad_voltdata_out[3].value, ad_voltdata_out[3].index);
+                volt[4]=ADS1256_AverageFloat(ad_voltdata_out[4].value, ad_voltdata_out[4].index);
+                volt[5]=ADS1256_AverageFloat(ad_voltdata_out[5].value, ad_voltdata_out[5].index);
+                volt[6]=ADS1256_AverageFloat(ad_voltdata_out[6].value, ad_voltdata_out[6].index);
+                // printf("i%d,av%lf\n",ad_voltdata.index,volt);
+                // printf("av:%lf\n",volt);
+                for(uint8_t i=0;i<7;i++)
+                {
+                    printf("%lf",volt[i]);
+                    ad_voltdata_out[i].index=0;
+                    if (i<6)
+                        printf(",");
+                    else
+                        printf("\n");
+                }
                 ad_voltdata.index = 0;
 
                 state = IDE;
@@ -568,6 +640,8 @@ void key_event_handler(uint8_t key_id, key_event_t event)
         switch (event)
         {
         case KEY_EVENT_CLICK:
+            key2_click=1;
+
             HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
             break;
         case KEY_EVENT_LONG_PRESS:
@@ -592,7 +666,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         {
             adc_get_flag^=1;
         }
-        else if (ms % 101==0)
+        else if (ms % 201==0)
         {
 
             time_100ms_flag=1;
@@ -622,16 +696,20 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
                 cnt++;
             t = HAL_TIM_ReadCapturedValue(htim,TIM_CHANNEL_1)+1;
             pulse_width=t-d;
+            // pul_index++;
             pulse_width_arr[pul_index++]=pulse_width;
-            if (pul_index==30)pul_index=0;
+            // if (pul_index==7)pul_index=0;
+            // printf("%d\n",pulse_width);
 
             tmp =((last_pulse_width-pulse_width))*100/last_pulse_width;
             if (tmp>40)
             {
                 // printf("%d\n",tmp);
+                // printf("%d\n",cnt);
                 // printf("%d,%d\n",last_pulse_width,pulse_width);
                 pul_index=0;
             }
+
             if (pul_index==6)
                 print_flag=1;
 

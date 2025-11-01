@@ -31,7 +31,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5171dec8-f6c4-4d68-9e21-f999fa401e68" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ads1256.elf.dir/compiler_depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ads1256.elf.dir/compiler_depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ads1256.elf.dir/compiler_depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ads1256.elf.dir/compiler_depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ads1256.elf.dir/usr/app_main.c.obj" afterDir="false" />
@@ -40,7 +40,6 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/ads1256.hex" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ads1256.hex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/ads1256.map" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ads1256.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/usr/ads1256/ads125x.c" beforeDir="false" afterPath="$PROJECT_DIR$/usr/ads1256/ads125x.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usr/ads1256/ads125x.h" beforeDir="false" afterPath="$PROJECT_DIR$/usr/ads1256/ads125x.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/usr/app_main.c" beforeDir="false" afterPath="$PROJECT_DIR$/usr/app_main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
